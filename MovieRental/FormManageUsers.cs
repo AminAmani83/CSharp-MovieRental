@@ -17,5 +17,6 @@ namespace MovieRental
             InitializeComponent();
 
         }
+
     }
 }
