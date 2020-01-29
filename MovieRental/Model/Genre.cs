@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace MovieRental
 {
-    class Genre
+   public class Genre
     {
+        private readonly ObservableListSource<Movie> movie = new ObservableListSource<Movie>();
+        public int GenreId { get; set; }
+        public string Name { get; set; }
+        public virtual ObservableListSource<Movie> Movie { get { return movie; } }
+
     }
 }
