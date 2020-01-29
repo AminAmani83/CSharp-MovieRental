@@ -18,5 +18,8 @@ namespace MovieRental
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormBorrowMovies());
         }
+
+        // STEPH added comment here - to delete
+
     }
 }
