@@ -18,7 +18,7 @@ namespace MovieRental
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormBorrowMovies());
 
-            //test from weiwei
+       
         }
     }
 }
