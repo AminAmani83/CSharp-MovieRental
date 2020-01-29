@@ -40,19 +40,19 @@ namespace MovieRental
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.comboBoxGenre = new System.Windows.Forms.ComboBox();
             this.txtImage = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblImage = new System.Windows.Forms.Label();
             this.txtSynopsis = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblSynopsis = new System.Windows.Forms.Label();
             this.txtDuration = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
             this.txtRating = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblRating = new System.Windows.Forms.Label();
             this.txtDirector = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDirector = new System.Windows.Forms.Label();
+            this.lblGenre = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBoxMovieInformation.SuspendLayout();
             this.SuspendLayout();
@@ -131,19 +131,19 @@ namespace MovieRental
             this.groupBoxMovieInformation.Controls.Add(this.comboBoxYear);
             this.groupBoxMovieInformation.Controls.Add(this.comboBoxGenre);
             this.groupBoxMovieInformation.Controls.Add(this.txtImage);
-            this.groupBoxMovieInformation.Controls.Add(this.label5);
+            this.groupBoxMovieInformation.Controls.Add(this.lblImage);
             this.groupBoxMovieInformation.Controls.Add(this.txtSynopsis);
-            this.groupBoxMovieInformation.Controls.Add(this.label6);
+            this.groupBoxMovieInformation.Controls.Add(this.lblSynopsis);
             this.groupBoxMovieInformation.Controls.Add(this.txtDuration);
-            this.groupBoxMovieInformation.Controls.Add(this.label7);
-            this.groupBoxMovieInformation.Controls.Add(this.label8);
+            this.groupBoxMovieInformation.Controls.Add(this.lblDuration);
+            this.groupBoxMovieInformation.Controls.Add(this.lblYear);
             this.groupBoxMovieInformation.Controls.Add(this.txtRating);
-            this.groupBoxMovieInformation.Controls.Add(this.label3);
+            this.groupBoxMovieInformation.Controls.Add(this.lblRating);
             this.groupBoxMovieInformation.Controls.Add(this.txtDirector);
-            this.groupBoxMovieInformation.Controls.Add(this.label4);
-            this.groupBoxMovieInformation.Controls.Add(this.label2);
+            this.groupBoxMovieInformation.Controls.Add(this.lblDirector);
+            this.groupBoxMovieInformation.Controls.Add(this.lblGenre);
             this.groupBoxMovieInformation.Controls.Add(this.txtName);
-            this.groupBoxMovieInformation.Controls.Add(this.label1);
+            this.groupBoxMovieInformation.Controls.Add(this.lblName);
             this.groupBoxMovieInformation.Location = new System.Drawing.Point(65, 82);
             this.groupBoxMovieInformation.Name = "groupBoxMovieInformation";
             this.groupBoxMovieInformation.Size = new System.Drawing.Size(437, 373);
@@ -174,14 +174,14 @@ namespace MovieRental
             this.txtImage.Size = new System.Drawing.Size(284, 20);
             this.txtImage.TabIndex = 35;
             // 
-            // label5
+            // lblImage
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 337);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Image";
+            this.lblImage.AutoSize = true;
+            this.lblImage.Location = new System.Drawing.Point(36, 337);
+            this.lblImage.Name = "lblImage";
+            this.lblImage.Size = new System.Drawing.Size(36, 13);
+            this.lblImage.TabIndex = 34;
+            this.lblImage.Text = "Image";
             // 
             // txtSynopsis
             // 
@@ -191,14 +191,14 @@ namespace MovieRental
             this.txtSynopsis.Size = new System.Drawing.Size(284, 42);
             this.txtSynopsis.TabIndex = 33;
             // 
-            // label6
+            // lblSynopsis
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 277);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Synopsis";
+            this.lblSynopsis.AutoSize = true;
+            this.lblSynopsis.Location = new System.Drawing.Point(34, 277);
+            this.lblSynopsis.Name = "lblSynopsis";
+            this.lblSynopsis.Size = new System.Drawing.Size(49, 13);
+            this.lblSynopsis.TabIndex = 32;
+            this.lblSynopsis.Text = "Synopsis";
             // 
             // txtDuration
             // 
@@ -207,23 +207,23 @@ namespace MovieRental
             this.txtDuration.Size = new System.Drawing.Size(159, 20);
             this.txtDuration.TabIndex = 31;
             // 
-            // label7
+            // lblDuration
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 235);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Duration";
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Location = new System.Drawing.Point(34, 235);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(47, 13);
+            this.lblDuration.TabIndex = 30;
+            this.lblDuration.Text = "Duration";
             // 
-            // label8
+            // lblYear
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(34, 196);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Year";
+            this.lblYear.AutoSize = true;
+            this.lblYear.Location = new System.Drawing.Point(34, 196);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(29, 13);
+            this.lblYear.TabIndex = 29;
+            this.lblYear.Text = "Year";
             // 
             // txtRating
             // 
@@ -232,14 +232,14 @@ namespace MovieRental
             this.txtRating.Size = new System.Drawing.Size(159, 20);
             this.txtRating.TabIndex = 28;
             // 
-            // label3
+            // lblRating
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Rating";
+            this.lblRating.AutoSize = true;
+            this.lblRating.Location = new System.Drawing.Point(34, 152);
+            this.lblRating.Name = "lblRating";
+            this.lblRating.Size = new System.Drawing.Size(38, 13);
+            this.lblRating.TabIndex = 27;
+            this.lblRating.Text = "Rating";
             // 
             // txtDirector
             // 
@@ -248,23 +248,23 @@ namespace MovieRental
             this.txtDirector.Size = new System.Drawing.Size(284, 20);
             this.txtDirector.TabIndex = 26;
             // 
-            // label4
+            // lblDirector
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Director";
+            this.lblDirector.AutoSize = true;
+            this.lblDirector.Location = new System.Drawing.Point(34, 113);
+            this.lblDirector.Name = "lblDirector";
+            this.lblDirector.Size = new System.Drawing.Size(44, 13);
+            this.lblDirector.TabIndex = 25;
+            this.lblDirector.Text = "Director";
             // 
-            // label2
+            // lblGenre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Genre";
+            this.lblGenre.AutoSize = true;
+            this.lblGenre.Location = new System.Drawing.Point(34, 71);
+            this.lblGenre.Name = "lblGenre";
+            this.lblGenre.Size = new System.Drawing.Size(36, 13);
+            this.lblGenre.TabIndex = 24;
+            this.lblGenre.Text = "Genre";
             // 
             // txtName
             // 
@@ -273,14 +273,14 @@ namespace MovieRental
             this.txtName.Size = new System.Drawing.Size(284, 20);
             this.txtName.TabIndex = 23;
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(34, 32);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 22;
+            this.lblName.Text = "Name";
             // 
             // FormManageMovies
             // 
@@ -317,18 +317,18 @@ namespace MovieRental
         private System.Windows.Forms.ComboBox comboBoxYear;
         private System.Windows.Forms.ComboBox comboBoxGenre;
         private System.Windows.Forms.TextBox txtImage;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblImage;
         private System.Windows.Forms.TextBox txtSynopsis;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSynopsis;
         private System.Windows.Forms.TextBox txtDuration;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblDuration;
+        private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.TextBox txtRating;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblRating;
         private System.Windows.Forms.TextBox txtDirector;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDirector;
+        private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
     }
 }
