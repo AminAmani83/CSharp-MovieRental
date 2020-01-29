@@ -19,7 +19,5 @@ namespace MovieRental
             Application.Run(new FormBorrowMovies());
         }
 
-        // STEPH added comment here - to delete
-
     }
 }
