@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieRental.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,15 @@ namespace MovieRental
 {
    public class Genre
     {
-        private readonly ObservableListSource<Movie> movie = new ObservableListSource<Movie>();
+        private readonly ObservableListSource<GenreMovies> genreMovies = new ObservableListSource<GenreMovies>();
+
         public int GenreId { get; set; }
         public string Name { get; set; }
-        public virtual ObservableListSource<Movie> Movie { get { return movie; } }
 
+        public virtual ObservableListSource<GenreMovies> GenreMovies { get { return genreMovies; } }
+
+
+        //public int GenreMovieId { get; set; }
+        //public virtual GenreMovies GenreMovies { get; set; }
     }
 }

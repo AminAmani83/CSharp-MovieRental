@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormManageGenres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManageGenres.Designer.cs">
+      <DependentUpon>FormManageGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManageMovies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +87,18 @@
     <Compile Include="FormBorrowMovies.Designer.cs">
       <DependentUpon>FormBorrowMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001292341388_InitialCreate.cs" />
+    <Compile Include="Migrations\202001292341388_InitialCreate.designer.cs">
+      <DependentUpon>202001292341388_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001300043220_fixedManyToMany.cs" />
+    <Compile Include="Migrations\202001300043220_fixedManyToMany.designer.cs">
+      <DependentUpon>202001300043220_fixedManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BorrowHistory.cs" />
     <Compile Include="Model\Genre.cs" />
+    <Compile Include="Model\GenreMovies.cs" />
     <Compile Include="Model\Movie.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="MovieRentalContext.cs" />
@@ -91,6 +107,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBorrowMovies.resx">
       <DependentUpon>FormBorrowMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManageGenres.resx">
+      <DependentUpon>FormManageGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManageMovies.resx">
+      <DependentUpon>FormManageMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001292341388_InitialCreate.resx">
+      <DependentUpon>202001292341388_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001300043220_fixedManyToMany.resx">
+      <DependentUpon>202001300043220_fixedManyToMany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,6 +131,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Genre.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

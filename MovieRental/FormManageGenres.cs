@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace MovieRental
 {
-    public partial class FormManageMovies : Form
+    public partial class FormManageGenres : Form
     {
         MovieRentalContext context;//connect to database
 
-        public FormManageMovies()
+        public FormManageGenres()
         {
             InitializeComponent();
         }
@@ -30,11 +30,10 @@ namespace MovieRental
 
             //bingding the data to the source
             this.genreBindingSource.DataSource = context.Genres.Local.ToBindingList();
-            //this.genreMoviesBindingSource.DataSource = context.Genres.Local.ToBindingList();
 
         }
 
-        private void genreMoviesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void genreBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
 
@@ -42,7 +41,7 @@ namespace MovieRental
             this.context.SaveChanges();
 
             //refresh database
-            //this.genreComboBox.Refresh();
+            //this.genreDataGridView.Refresh();
         }
     }
 }
