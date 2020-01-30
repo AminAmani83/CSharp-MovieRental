@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CSharp_MovieRental
+{
+    public partial class FormManageMovies : Form
+    {
+        MovieRentalContext context; //connect to database
+
+        public FormManageMovies()
+        {
+            InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            context = new MovieRentalContext();
+
+            //Loading categories from DB
+            context.Genres.Load();
+
+            //bingding the data to the source
+            this.genreBindingSource.DataSource = context.Genres.Local.ToBindingList();
+        }
+
+        private void genreBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate(); // if any control has an event handler for the Validating event, it executes. 
+
+            this.genreBindingSource.EndEdit(); // complete current edit, if any
+
+            // try to save changes
+            try
+            {
+                this.context.SaveChanges(); // write changes to database file
+            }
+            catch (DbEntityValidationException)
+            {
+                MessageBox.Show("Error Updating the Database",
+                "Entity Validation Exception");
+            }
+
+            //refresh database
+            this.genreDataGridView.Refresh();
+        }
+    }
+}
