@@ -18,6 +18,7 @@ namespace CSharp_MovieRental
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormBorrowMovies());
             //Application.Run(new FormManageMovies());
+            //Application.Run(new FormManageUsers());
             Application.Run(new FormReturnMovies());
         }
     }

@@ -11,6 +11,7 @@ namespace CSharp_MovieRental
         public int BorrowHistoryId { get; set; }
 
         public DateTime BorrowDate { get; set; }
+        public DateTime ReturnDate { get; set; }
 
         public int UserId { get; set; }
         public int MovieId { get; set; }
