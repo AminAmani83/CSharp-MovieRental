@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharp_MovieRental.Validation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_MovieRental
 {
-    public class User
+    public class User : IValidation
     {
         private readonly ObservableListSource<BorrowHistory> borrowHistory = new ObservableListSource<BorrowHistory>();
         public int UserId { get; set; }
@@ -17,5 +18,29 @@ namespace CSharp_MovieRental
 
         public virtual ObservableListSource<BorrowHistory> BorrowHistory { get { return borrowHistory; } }
 
+        public bool IsValid()
+        {
+            return (this.Validate().Count() == 0);
+        }
+
+        public IEnumerable<string> Validate()
+        {
+            if (string.IsNullOrEmpty(this.FirstName))
+            {
+                yield return "First Name is mandatory.";
+            }
+            if (string.IsNullOrEmpty(this.LastName))
+            {
+                yield return "Last Name is mandatory.";
+            }
+            if (string.IsNullOrEmpty(this.Email))
+            {
+                yield return "Email is mandatory.";
+            }
+            if (string.IsNullOrEmpty(this.Phone))
+            {
+                yield return "Phone Number is mandatory.";
+            }
+        }
     }
 }

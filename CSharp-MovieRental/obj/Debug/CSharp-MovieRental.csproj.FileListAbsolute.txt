@@ -27,3 +27,18 @@ C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-Movi
 C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.csproj.CopyComplete
 C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.exe
 C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.pdb
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\bin\Debug\CSharp-MovieRental.exe.config
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\bin\Debug\CSharp-MovieRental.exe
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\bin\Debug\CSharp-MovieRental.pdb
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\bin\Debug\EntityFramework.dll
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\bin\Debug\EntityFramework.xml
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.csprojAssemblyReference.cache
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp_MovieRental.FormManageMovies.resources
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp_MovieRental.FormManageUsers.resources
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp_MovieRental.Properties.Resources.resources
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.csproj.GenerateResource.cache
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.csproj.CopyComplete
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.exe
+C:\Users\steph\source\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.pdb
