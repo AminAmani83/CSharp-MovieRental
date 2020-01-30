@@ -88,11 +88,17 @@
     <Compile Include="ObservableListSource.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBorrowMovies.resx">
+      <DependentUpon>FormBorrowMovies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManageMovies.resx">
       <DependentUpon>FormManageMovies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManageUsers.resx">
       <DependentUpon>FormManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReturnMovies.resx">
+      <DependentUpon>FormReturnMovies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
