@@ -80,6 +80,15 @@
     <Compile Include="FormReturnMovies.Designer.cs">
       <DependentUpon>FormReturnMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001300718278_InitialCreate.cs" />
+    <Compile Include="Migrations\202001300718278_InitialCreate.designer.cs">
+      <DependentUpon>202001300718278_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001302204041_ReturnDateAdded.cs" />
+    <Compile Include="Migrations\202001302204041_ReturnDateAdded.designer.cs">
+      <DependentUpon>202001302204041_ReturnDateAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BorrowHistory.cs" />
     <Compile Include="Model\Genre.cs" />
     <Compile Include="Model\Movie.cs" />
@@ -100,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReturnMovies.resx">
       <DependentUpon>FormReturnMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001300718278_InitialCreate.resx">
+      <DependentUpon>202001300718278_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001302204041_ReturnDateAdded.resx">
+      <DependentUpon>202001302204041_ReturnDateAdded.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

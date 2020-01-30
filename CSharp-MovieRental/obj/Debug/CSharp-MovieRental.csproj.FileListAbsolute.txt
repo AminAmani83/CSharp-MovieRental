@@ -29,3 +29,5 @@ C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-Movi
 C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.pdb
 C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp_MovieRental.FormBorrowMovies.resources
 C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp_MovieRental.FormReturnMovies.resources
+C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp_MovieRental.Migrations.InitialCreate.resources
+C:\Users\amin_\Documents\IPD\DotNet\My Code\repos\CSharp-MovieRental\CSharp-MovieRental\obj\Debug\CSharp_MovieRental.Migrations.ReturnDateAdded.resources
