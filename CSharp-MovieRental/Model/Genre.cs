@@ -12,5 +12,20 @@ namespace CSharp_MovieRental
         public int GenreId { get; set; }
         public string Name { get; set; }
         public virtual ObservableListSource<Movie> Movie { get { return movie; } }
+
+        //validation
+        public bool IsValid()
+        {
+            return (this.Validate().Count() == 0);
+        }
+
+        public IEnumerable<string> Validate()
+        {
+            if (string.IsNullOrEmpty(this.Name))
+            {
+                yield return "Name is Mandatory.";
+            }
+
+        }
     }
 }

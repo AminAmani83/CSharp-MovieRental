@@ -88,8 +88,8 @@ namespace CSharp_MovieRental
 
         private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
+
             using (FormReturnMovies returnMovies = new FormReturnMovies())
             {
                 returnMovies.ShowDialog();

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace CSharp_MovieRental
@@ -25,11 +24,8 @@ namespace CSharp_MovieRental
             base.OnLoad(e);
             context = new MovieRentalContext();
 
-            //Loading categories from DB
+            //Loading 
             context.Genres.Load();
-
-            //context.BorrowHistories.
-
             context.Users.Load();
             context.Movies.Load();
 
@@ -57,7 +53,6 @@ namespace CSharp_MovieRental
             User borrowingUser = context.Users.Where(u => u.Email.Equals(emailTextBox.Text)).FirstOrDefault();
 
             int movieId = (int)this.movieDataGridView.CurrentRow.Cells[0].Value;
-            //lblUserId.Text = "userId:"+useId +" MovieId: "+movieId;
 
             string connetionString = null;
             SqlConnection cnn;
@@ -69,7 +64,7 @@ namespace CSharp_MovieRental
 
             if (borrowingUser == null)
             {
-                MessageBox.Show("Invalid Email");
+                MessageBox.Show("Please Enter Valid Email");
             }
             else
             {
@@ -79,14 +74,15 @@ namespace CSharp_MovieRental
                     cnn.Open();
                     adapter.InsertCommand = new SqlCommand(sql, cnn);
                     adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Row inserted !! ");
+                    MessageBox.Show("Successfully Movie Borrowed! ");
+                    OnLoad(e);
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
             }
-
         }
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -120,17 +116,12 @@ namespace CSharp_MovieRental
 
         private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
             this.Hide();
             using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
             {
                 borrowMovies.ShowDialog();
             }
-        }
-
-        private void movieDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

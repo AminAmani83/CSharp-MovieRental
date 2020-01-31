@@ -20,5 +20,42 @@ namespace CSharp_MovieRental
         public int GenreId { get; set; } // we have a var with this name in Genre class
         public virtual Genre Genre { get; set; }
         public virtual ObservableListSource<BorrowHistory> BorrowHistory { get { return borrowHistory; } }
+        //validation
+        public bool IsValid()
+        {
+            return (this.Validate().Count() == 0);
+        }
+
+        public IEnumerable<string> Validate()
+        {
+            if (string.IsNullOrEmpty(this.Name))
+            {
+                yield return "First Name is Mandatory.";
+            }
+            if (string.IsNullOrEmpty(this.Director))
+            {
+                yield return "Last Name is Mandatory.";
+            }
+            if (this.Rating > 5)
+            {
+                yield return "Rating is over 5.";
+            }
+            if (this.Rating <= 0)
+            {
+                yield return "Rating is negative.";
+            }
+            if (this.Year > 2020)
+            {
+                yield return "Year is over 2020.";
+            }
+            if (this.Year < 1900)
+            {
+                yield return "Year is less than 1900.";
+            }
+            if (string.IsNullOrEmpty(this.Synopsis))
+            {
+                yield return "Synopsis is Mandatory.";
+            }
+        }
     }
 }
