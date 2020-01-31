@@ -30,27 +30,27 @@ namespace CSharp_MovieRental
         {
             if (string.IsNullOrEmpty(this.Name))
             {
-                yield return "First Name is Mandatory.";
+                yield return "First name is Mandatory.";
             }
             if (string.IsNullOrEmpty(this.Director))
             {
-                yield return "Last Name is Mandatory.";
+                yield return "Director's name is Mandatory.";
             }
             if (this.Rating > 5)
             {
-                yield return "Rating is over 5.";
+                yield return "Rating must between 0-10.";
             }
             if (this.Rating <= 0)
             {
-                yield return "Rating is negative.";
+                yield return "Rating must between 0-10.";
             }
             if (this.Year > 2020)
             {
                 yield return "Year is over 2020.";
             }
-            if (this.Year < 1900)
+            if (this.Year < 1800)
             {
-                yield return "Year is less than 1900.";
+                yield return "Year is less than 1800.";
             }
             if (string.IsNullOrEmpty(this.Synopsis))
             {
