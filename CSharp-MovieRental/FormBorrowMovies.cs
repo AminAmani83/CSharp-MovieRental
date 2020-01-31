@@ -116,7 +116,7 @@ namespace CSharp_MovieRental
 
             if (borrowingUser == null)
             {
-                MessageBox.Show("Please Enter Valid Email");
+                MessageBox.Show("Please Enter Valid Email", "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 emailTextBox.Text = "";
             }
             else
@@ -127,7 +127,7 @@ namespace CSharp_MovieRental
                     cnn.Open();
                     adapter.InsertCommand = new SqlCommand(sql, cnn);
                     adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Movie Borrowed Successfully ! ");
+                    MessageBox.Show("Movie Borrowed Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtSearchMovie.Text = "";
                     OnLoad(e);
 
