@@ -1,1 +1,0 @@
-C:\Users\Administrator\Desktop\CSharp-MovieRental-master\CSharp-MovieRental\obj\Debug\CSharp-MovieRental.csprojAssemblyReference.cache

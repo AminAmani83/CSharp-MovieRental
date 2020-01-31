@@ -88,5 +88,14 @@ namespace CSharp_MovieRental
                 borrowMovies.ShowDialog();
             }
         }
+
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FormReports reports = new FormReports())
+            {
+                reports.ShowDialog();
+            }
+        }
     }
 }
