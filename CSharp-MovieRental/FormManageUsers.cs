@@ -46,7 +46,13 @@ namespace CSharp_MovieRental
                 if (!user.IsValid())
                 {
                     this.context.Users.Remove(user);
-                    MessageBox.Show("Error Updating the Database","Entity Validation Exception");
+                    List<string> errorList = user.Validate().ToList();
+                    string errorMsg = "";
+                    foreach (var error in errorList)
+                    {
+                        errorMsg += ("\n" + error);
+                    }
+                    MessageBox.Show("Error Updating the Database\n" + errorMsg, "Invalid Submission");
                 }
             }
             
@@ -113,6 +119,7 @@ namespace CSharp_MovieRental
             btnSave.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+            groupBox1.BackColor = SystemColors.Control;
 
             // populate user list
             List<User> userList = context.Users.ToList();
@@ -134,6 +141,7 @@ namespace CSharp_MovieRental
                 btnSave.Enabled = false;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+                groupBox1.BackColor = SystemColors.ActiveCaption;
             }
         }
 
