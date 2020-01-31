@@ -20,7 +20,6 @@ namespace CSharp_MovieRental
             //Application.Run(new FormManageMovies());
             //Application.Run(new FormManageUsers());
             //Application.Run(new FormReturnMovies());
-            //Application.Run(new FormReports());
         }
     }
 }

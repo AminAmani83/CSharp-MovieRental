@@ -15,7 +15,7 @@ namespace CSharp_MovieRental
     {
         MovieRentalContext context; //connect to database
         User returningUser;
-        ObservableListSource<Movie> movieList;
+        List<Movie> movieList;
 
         public FormReturnMovies()
         {
@@ -48,7 +48,7 @@ namespace CSharp_MovieRental
             // Find the records (in the borrowHistory table) related to movies that were borrowed by this user but never returned (return date is 1900)
             List<BorrowHistory> bhList = context.BorrowHistories.Where(b => b.UserId == returningUser.UserId && DateTime.Compare(b.ReturnDate, new DateTime(1910,1,1,0,0,0)) < 0).ToList();
 
-            movieList = new ObservableListSource<Movie>();
+            movieList = new List<Movie>();
 
             // Find the movies related to above records
             foreach (BorrowHistory bh in bhList)
@@ -68,14 +68,13 @@ namespace CSharp_MovieRental
 
             borrowHistory.ReturnDate = DateTime.Now;
 
-            // Removing movie from the form (Auto update)
-            Movie returnedMovie = context.Movies.Where(m => m.MovieId == movieId).FirstOrDefault();
-            movieList.Remove(returnedMovie);
-
             // Save to DB
             context.SaveChanges();
 
             MessageBox.Show("Movie Returned Successfully!");
+
+            // Refreshing the DataGridView
+            this.btnSearch.PerformClick();
         }
 
         // Navigation
@@ -111,14 +110,6 @@ namespace CSharp_MovieRental
             }
         }
 
-        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            using (FormReports reports = new FormReports())
-            {
-                reports.ShowDialog();
-            }
-        }
     }
 }
 

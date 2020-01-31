@@ -43,7 +43,6 @@
             this.returnMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpBorrowedMovies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
@@ -151,8 +150,7 @@
             this.borrowMoviesToolStripMenuItem,
             this.returnMoviesToolStripMenuItem,
             this.manageUsersToolStripMenuItem,
-            this.manageMoviesToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.manageMoviesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -187,13 +185,6 @@
             this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
             this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
             // FormReturnMovies
             // 
@@ -235,6 +226,5 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.BindingSource movieBindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
     }
 }

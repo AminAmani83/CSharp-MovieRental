@@ -15,7 +15,6 @@ namespace CSharp_MovieRental
     public partial class FormManageUsers : Form
     {
         MovieRentalContext context; //connect to database
-        User user;
         User selectedUser;
         public FormManageUsers()
         {
@@ -26,37 +25,41 @@ namespace CSharp_MovieRental
         {
             base.OnLoad(e);
             context = new MovieRentalContext();
-            resetForm();
+            clearFields();
+            btnSave.Text = "SAVE";
+            btnDelete.Enabled = false;
+
+            // binding the data to the source
+            this.borrowHistoryBindingSource.DataSource = context.Users.Add(new User());
+
+            // populate user list
+            List<User> userList = context.Users.ToList();
+            this.dataGridViewUsers.DataSource = userList;
+            dataGridViewUsers.Columns[0].Visible = false;
         }
 
         private void borrowHistoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate(); // if any control has an event handler for the Validating event, it executes. 
-
-            user.FirstName = firstNameTextBox.Text;
-            user.LastName = lastNameTextBox.Text;
-            user.Email = emailTextBox.Text;
-            user.Phone = phoneTextBox.Text;
-
-            context.Users.Add(user);
-
-            /*
+            
+           
             foreach (var user in context.Users.Local.ToList())
             {
                 if (!user.IsValid())
-                {
+                {                         
                     this.context.Users.Remove(user);
-                    MessageBox.Show("Error Updating the Database","Entity Validation Exception");
+                    MessageBox.Show("Error Updating the Database", "Entity Validation Exception");
                 }
             }
-            */
+            
 
             this.borrowHistoryBindingSource.EndEdit(); // complete current edit, if any
 
             this.context.SaveChanges(); // write changes to database file
 
             //refresh page
-            resetForm();
+            //clearFields();
+            OnLoad(e);
         }
 
         #region Navigation
@@ -91,33 +94,14 @@ namespace CSharp_MovieRental
                 borrowMovies.ShowDialog();
             }
         }
-        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            using (FormReports reports = new FormReports())
-            {
-                reports.ShowDialog();
-            }
-        }
         #endregion
 
-        public void resetForm()
+        public void clearFields()
         {
-            user = new User();
-
             firstNameTextBox.Clear();
             lastNameTextBox.Clear();
             emailTextBox.Clear();
             phoneTextBox.Clear();
-
-            btnSave.Enabled = true;
-            btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
-
-            // populate user list
-            List<User> userList = context.Users.ToList();
-            this.dataGridViewUsers.DataSource = userList;
-            dataGridViewUsers.Columns[0].Visible = false;
         }
 
         private void dataGridViewUsers_DoubleClick(object sender, EventArgs e)
@@ -130,39 +114,24 @@ namespace CSharp_MovieRental
                 lastNameTextBox.Text = selectedUser.LastName;
                 emailTextBox.Text = selectedUser.Email;
                 phoneTextBox.Text = selectedUser.Phone;
-
-                btnSave.Enabled = false;
+                btnSave.Text = "UPDATE";
                 btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            resetForm();
+            OnLoad(e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this profile?", "Delete Profile", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete this profile?","Delete Profile",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 context.Users.Remove(selectedUser);
                 context.SaveChanges();
             }
-            resetForm();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            selectedUser.FirstName = firstNameTextBox.Text;
-            selectedUser.LastName = lastNameTextBox.Text;
-            selectedUser.Email = emailTextBox.Text;
-            selectedUser.Phone = phoneTextBox.Text;
-
-            context.Entry(selectedUser).State = EntityState.Modified;
-            context.SaveChanges();
-            resetForm();
+            OnLoad(e);
         }
     }
 }
-

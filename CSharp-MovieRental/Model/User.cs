@@ -40,18 +40,15 @@ namespace CSharp_MovieRental
             {
                 yield return "Email is mandatory.";
             }
-            else if (!Regex.Match(this.Email, pattern).Success)
+           // else if (!Regex.Match(this.Email, pattern).Success)
 
-            {
-                yield return "Email is not correct.";
-            }
+          //  {
+          //      yield return "Email is not correct.";
+           // }
             if (string.IsNullOrEmpty(this.Phone))
             {
                 yield return "Phone is mandatory.";
                 
-            }else if (Regex.Match(this.Phone, @"^(\+[0-9])$").Success )
-            {
-                yield return "Phone Number is not correct.";
             }
         }
     }

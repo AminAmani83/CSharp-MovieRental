@@ -33,7 +33,7 @@ namespace CSharp_MovieRental
             this.genreBindingSource.DataSource = context.Genres.Local.ToBindingList();
 
             this.userBindingSource.DataSource = context.Users.Local.ToBindingList();
-            
+
             List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
             List<Movie> allMovieList = context.Movies.ToList();
             foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
@@ -54,7 +54,6 @@ namespace CSharp_MovieRental
             }
             else
             {
-                
                 List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
                 List<Movie> allMovieList = context.Movies.ToList();
                 foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
@@ -181,17 +180,6 @@ namespace CSharp_MovieRental
         private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Current Page
-        }
-
-        private void comboGenre_MouseClick(object sender, MouseEventArgs e)
-        {
-            comboGenre.Items.Clear();
-
-            List<Genre> gettingGenres = context.Genres.ToList();
-            foreach (Genre genre in gettingGenres)
-            {
-                this.comboGenre.Items.Add(genre.Name);
-            }
         }
     }
 }
