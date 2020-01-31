@@ -37,20 +37,26 @@ namespace CSharp_MovieRental
         private void btnSearch_Click(object sender, EventArgs e)
         {
             returningUser = context.Users.Where(u => u.Email.Equals(txtUserEmail.Text)).FirstOrDefault();
-            if (returningUser != null)
+            
+            if (returningUser == null) // user does not exist
             {
-                lblUser.Text = returningUser.UserId.ToString();
+                MessageBox.Show("User not found, Please try again.");
+                this.txtUserEmail.Focus();
+                return;
             }
 
+            // Find the records (in the borrowHistory table) related to movies that were borrowed by this user but never returned (return date is 1900)
             List<BorrowHistory> bhList = context.BorrowHistories.Where(b => b.UserId == returningUser.UserId && DateTime.Compare(b.ReturnDate, new DateTime(1910,1,1,0,0,0)) < 0).ToList();
 
             movieList = new List<Movie>();
 
+            // Find the movies related to above records
             foreach (BorrowHistory bh in bhList)
             {
                 movieList.Add(context.Movies.Where(m => m.MovieId == bh.MovieId).FirstOrDefault());
             }
            
+            // Add movies to the form
             this.dataGridView1.DataSource = movieList;
         }
 
@@ -67,7 +73,7 @@ namespace CSharp_MovieRental
 
             MessageBox.Show("Movie Returned Successfully!");
 
-            // Removing Movie From the DataGridView
+            // Refreshing the DataGridView
             this.btnSearch.PerformClick();
         }
 
