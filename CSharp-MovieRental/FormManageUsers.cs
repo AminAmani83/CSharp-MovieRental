@@ -40,7 +40,7 @@ namespace CSharp_MovieRental
 
             context.Users.Add(user);
 
-            /*
+            
             foreach (var user in context.Users.Local.ToList())
             {
                 if (!user.IsValid())
@@ -49,7 +49,7 @@ namespace CSharp_MovieRental
                     MessageBox.Show("Error Updating the Database","Entity Validation Exception");
                 }
             }
-            */
+            
 
             this.borrowHistoryBindingSource.EndEdit(); // complete current edit, if any
 
