@@ -94,7 +94,7 @@ namespace CSharp_MovieRental
             }
             else
             {
-                MessageBox.Show("Sorry, Movie is Not Available. Loading all movies instead...", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sorry, Movie is Not Available. Loading all movies instead...", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 OnLoad(e);
             }
 
