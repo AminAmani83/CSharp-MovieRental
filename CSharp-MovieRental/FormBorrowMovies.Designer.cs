@@ -29,26 +29,12 @@ namespace CSharp_MovieRental
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBorrowMovies));
             this.lblTitle = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.borrowMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.genreBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.genreBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.movieDataGridView = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -59,10 +45,12 @@ namespace CSharp_MovieRental
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.btnBorrow = new System.Windows.Forms.Button();
             this.groupBoxSearchMovies = new System.Windows.Forms.GroupBox();
+            this.comboGenre = new System.Windows.Forms.ComboBox();
+            this.lblSearchByGenre = new System.Windows.Forms.Label();
+            this.lblMessage1 = new System.Windows.Forms.Label();
             this.lblMovie = new System.Windows.Forms.Label();
             this.txtSearchMovie = new System.Windows.Forms.TextBox();
             this.lblSearchName = new System.Windows.Forms.Label();
-            this.lblMessage1 = new System.Windows.Forms.Label();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,8 +62,6 @@ namespace CSharp_MovieRental
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genreBindingNavigator)).BeginInit();
-            this.genreBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDataGridView)).BeginInit();
             this.groupBoxMovieInfo.SuspendLayout();
@@ -89,9 +75,10 @@ namespace CSharp_MovieRental
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(477, 74);
+            this.lblTitle.Location = new System.Drawing.Point(481, 56);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(187, 29);
+            this.lblTitle.Size = new System.Drawing.Size(148, 24);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Borrow Movies";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -106,162 +93,37 @@ namespace CSharp_MovieRental
             this.manageMoviesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1679, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1104, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // borrowMoviesToolStripMenuItem
             // 
             this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
-            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
             this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
             // 
             // returnMoviesToolStripMenuItem
             // 
             this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
-            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.returnMoviesToolStripMenuItem.Text = "Return Movies";
             this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageMoviesToolStripMenuItem
             // 
             this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
-            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
-            // 
-            // genreBindingNavigator
-            // 
-            this.genreBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.genreBindingNavigator.BindingSource = this.genreBindingSource;
-            this.genreBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.genreBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.genreBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.genreBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.genreBindingNavigatorSaveItem});
-            this.genreBindingNavigator.Location = new System.Drawing.Point(0, 28);
-            this.genreBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.genreBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.genreBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.genreBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.genreBindingNavigator.Name = "genreBindingNavigator";
-            this.genreBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.genreBindingNavigator.Size = new System.Drawing.Size(1679, 27);
-            this.genreBindingNavigator.TabIndex = 10;
-            this.genreBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // genreBindingNavigatorSaveItem
-            // 
-            this.genreBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.genreBindingNavigatorSaveItem.Enabled = false;
-            this.genreBindingNavigatorSaveItem.Name = "genreBindingNavigatorSaveItem";
-            this.genreBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
-            this.genreBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // movieBindingSource
             // 
@@ -284,20 +146,18 @@ namespace CSharp_MovieRental
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.movieDataGridView.DataSource = this.movieBindingSource;
-            this.movieDataGridView.Location = new System.Drawing.Point(12, 39);
-            this.movieDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.movieDataGridView.Location = new System.Drawing.Point(9, 32);
             this.movieDataGridView.Name = "movieDataGridView";
             this.movieDataGridView.ReadOnly = true;
             this.movieDataGridView.RowHeadersWidth = 51;
-            this.movieDataGridView.Size = new System.Drawing.Size(1617, 340);
+            this.movieDataGridView.Size = new System.Drawing.Size(1054, 276);
             this.movieDataGridView.TabIndex = 13;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(868, 43);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(988, 35);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 28);
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -306,20 +166,17 @@ namespace CSharp_MovieRental
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(80, 398);
-            this.lblUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserId.Location = new System.Drawing.Point(60, 323);
             this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(0, 17);
+            this.lblUserId.Size = new System.Drawing.Size(0, 13);
             this.lblUserId.TabIndex = 16;
             // 
             // groupBoxMovieInfo
             // 
             this.groupBoxMovieInfo.Controls.Add(this.movieDataGridView);
-            this.groupBoxMovieInfo.Location = new System.Drawing.Point(17, 254);
-            this.groupBoxMovieInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxMovieInfo.Location = new System.Drawing.Point(13, 206);
             this.groupBoxMovieInfo.Name = "groupBoxMovieInfo";
-            this.groupBoxMovieInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxMovieInfo.Size = new System.Drawing.Size(1649, 401);
+            this.groupBoxMovieInfo.Size = new System.Drawing.Size(1085, 326);
             this.groupBoxMovieInfo.TabIndex = 18;
             this.groupBoxMovieInfo.TabStop = false;
             this.groupBoxMovieInfo.Text = "Available Movies";
@@ -329,11 +186,9 @@ namespace CSharp_MovieRental
             this.groupBoxBorrow.Controls.Add(this.emailLabel);
             this.groupBoxBorrow.Controls.Add(this.emailTextBox);
             this.groupBoxBorrow.Controls.Add(this.btnBorrow);
-            this.groupBoxBorrow.Location = new System.Drawing.Point(17, 663);
-            this.groupBoxBorrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxBorrow.Location = new System.Drawing.Point(13, 539);
             this.groupBoxBorrow.Name = "groupBoxBorrow";
-            this.groupBoxBorrow.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxBorrow.Size = new System.Drawing.Size(1649, 123);
+            this.groupBoxBorrow.Size = new System.Drawing.Size(1085, 100);
             this.groupBoxBorrow.TabIndex = 19;
             this.groupBoxBorrow.TabStop = false;
             this.groupBoxBorrow.Text = "Borrow";
@@ -341,28 +196,25 @@ namespace CSharp_MovieRental
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(40, 62);
-            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailLabel.Location = new System.Drawing.Point(30, 50);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(46, 17);
+            this.emailLabel.Size = new System.Drawing.Size(35, 13);
             this.emailLabel.TabIndex = 19;
             this.emailLabel.Text = "Email:";
             // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(139, 53);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTextBox.Location = new System.Drawing.Point(104, 43);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(605, 22);
+            this.emailTextBox.Size = new System.Drawing.Size(455, 20);
             this.emailTextBox.TabIndex = 20;
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(868, 49);
-            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrow.Location = new System.Drawing.Point(651, 40);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(100, 28);
+            this.btnBorrow.Size = new System.Drawing.Size(75, 23);
             this.btnBorrow.TabIndex = 18;
             this.btnBorrow.Text = "Borrow";
             this.btnBorrow.UseVisualStyleBackColor = true;
@@ -370,55 +222,71 @@ namespace CSharp_MovieRental
             // 
             // groupBoxSearchMovies
             // 
+            this.groupBoxSearchMovies.Controls.Add(this.comboGenre);
+            this.groupBoxSearchMovies.Controls.Add(this.lblSearchByGenre);
             this.groupBoxSearchMovies.Controls.Add(this.lblMessage1);
             this.groupBoxSearchMovies.Controls.Add(this.lblMovie);
             this.groupBoxSearchMovies.Controls.Add(this.txtSearchMovie);
             this.groupBoxSearchMovies.Controls.Add(this.lblSearchName);
             this.groupBoxSearchMovies.Controls.Add(this.btnSearch);
-            this.groupBoxSearchMovies.Location = new System.Drawing.Point(17, 132);
-            this.groupBoxSearchMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSearchMovies.Location = new System.Drawing.Point(13, 107);
             this.groupBoxSearchMovies.Name = "groupBoxSearchMovies";
-            this.groupBoxSearchMovies.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxSearchMovies.Size = new System.Drawing.Size(1649, 114);
+            this.groupBoxSearchMovies.Size = new System.Drawing.Size(1085, 95);
             this.groupBoxSearchMovies.TabIndex = 20;
             this.groupBoxSearchMovies.TabStop = false;
             this.groupBoxSearchMovies.Text = "Search in Movies";
             // 
+            // comboGenre
+            // 
+            this.comboGenre.FormattingEnabled = true;
+            this.comboGenre.Location = new System.Drawing.Point(634, 41);
+            this.comboGenre.Name = "comboGenre";
+            this.comboGenre.Size = new System.Drawing.Size(121, 21);
+            this.comboGenre.TabIndex = 17;
+            this.comboGenre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboGenre_MouseClick);
+            // 
+            // lblSearchByGenre
+            // 
+            this.lblSearchByGenre.AutoSize = true;
+            this.lblSearchByGenre.Location = new System.Drawing.Point(582, 37);
+            this.lblSearchByGenre.Name = "lblSearchByGenre";
+            this.lblSearchByGenre.Size = new System.Drawing.Size(36, 13);
+            this.lblSearchByGenre.TabIndex = 16;
+            this.lblSearchByGenre.Text = "Genre";
+            // 
+            // lblMessage1
+            // 
+            this.lblMessage1.AutoSize = true;
+            this.lblMessage1.Location = new System.Drawing.Point(104, 62);
+            this.lblMessage1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMessage1.Name = "lblMessage1";
+            this.lblMessage1.Size = new System.Drawing.Size(223, 13);
+            this.lblMessage1.TabIndex = 15;
+            this.lblMessage1.Text = "Leave this field empty to search for all movies.";
+            // 
             // lblMovie
             // 
             this.lblMovie.AutoSize = true;
-            this.lblMovie.Location = new System.Drawing.Point(87, 71);
-            this.lblMovie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMovie.Location = new System.Drawing.Point(65, 58);
             this.lblMovie.Name = "lblMovie";
-            this.lblMovie.Size = new System.Drawing.Size(0, 17);
+            this.lblMovie.Size = new System.Drawing.Size(0, 13);
             this.lblMovie.TabIndex = 2;
             // 
             // txtSearchMovie
             // 
-            this.txtSearchMovie.Location = new System.Drawing.Point(139, 46);
-            this.txtSearchMovie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchMovie.Location = new System.Drawing.Point(104, 37);
             this.txtSearchMovie.Name = "txtSearchMovie";
-            this.txtSearchMovie.Size = new System.Drawing.Size(605, 22);
+            this.txtSearchMovie.Size = new System.Drawing.Size(455, 20);
             this.txtSearchMovie.TabIndex = 1;
             // 
             // lblSearchName
             // 
             this.lblSearchName.AutoSize = true;
-            this.lblSearchName.Location = new System.Drawing.Point(40, 51);
-            this.lblSearchName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSearchName.Location = new System.Drawing.Point(30, 41);
             this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(45, 17);
+            this.lblSearchName.Size = new System.Drawing.Size(35, 13);
             this.lblSearchName.TabIndex = 0;
             this.lblSearchName.Text = "Name";
-            // 
-            // lblMessage1
-            // 
-            this.lblMessage1.AutoSize = true;
-            this.lblMessage1.Location = new System.Drawing.Point(139, 76);
-            this.lblMessage1.Name = "lblMessage1";
-            this.lblMessage1.Size = new System.Drawing.Size(299, 17);
-            this.lblMessage1.TabIndex = 15;
-            this.lblMessage1.Text = "Leave this field empty to search for all movies.";
             // 
             // userBindingSource
             // 
@@ -502,25 +370,21 @@ namespace CSharp_MovieRental
             // 
             // FormBorrowMovies
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1679, 811);
+            this.ClientSize = new System.Drawing.Size(1104, 639);
             this.Controls.Add(this.groupBoxSearchMovies);
             this.Controls.Add(this.groupBoxBorrow);
             this.Controls.Add(this.groupBoxMovieInfo);
             this.Controls.Add(this.lblUserId);
-            this.Controls.Add(this.genreBindingNavigator);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBorrowMovies";
             this.Text = "Borrow Movies";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genreBindingNavigator)).EndInit();
-            this.genreBindingNavigator.ResumeLayout(false);
-            this.genreBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDataGridView)).EndInit();
             this.groupBoxMovieInfo.ResumeLayout(false);
@@ -544,19 +408,6 @@ namespace CSharp_MovieRental
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageMoviesToolStripMenuItem;
         private System.Windows.Forms.BindingSource genreBindingSource;
-        private System.Windows.Forms.BindingNavigator genreBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton genreBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource movieBindingSource;
         private System.Windows.Forms.DataGridView movieDataGridView;
         private System.Windows.Forms.Button btnSearch;
@@ -580,6 +431,8 @@ namespace CSharp_MovieRental
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Label lblMessage1;
+        private System.Windows.Forms.Label lblSearchByGenre;
+        private System.Windows.Forms.ComboBox comboGenre;
     }
 }
 
