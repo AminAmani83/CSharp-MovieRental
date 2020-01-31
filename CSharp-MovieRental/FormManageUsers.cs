@@ -58,9 +58,9 @@ namespace CSharp_MovieRental
             
 
             this.borrowHistoryBindingSource.EndEdit(); // complete current edit, if any
-
+            
             this.context.SaveChanges(); // write changes to database file
-
+            MessageBox.Show("Suceesfully add a user");
             //refresh page
             resetForm();
         }
