@@ -74,7 +74,7 @@ namespace CSharp_MovieRental
                     cnn.Open();
                     adapter.InsertCommand = new SqlCommand(sql, cnn);
                     adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Movie Borrowed! ");
+                    MessageBox.Show("Movie Borrowed Successfully!");
                     OnLoad(e);
 
                 }
@@ -84,9 +84,10 @@ namespace CSharp_MovieRental
                 }
             }
         }
+
+        // Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormManageMovies formMovies = new FormManageMovies())
             {
@@ -96,7 +97,6 @@ namespace CSharp_MovieRental
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormManageUsers formUsers = new FormManageUsers())
             {
@@ -106,7 +106,6 @@ namespace CSharp_MovieRental
 
         private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormReturnMovies returnMovies = new FormReturnMovies())
             {
@@ -116,12 +115,7 @@ namespace CSharp_MovieRental
 
         private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            this.Hide();
-            using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
-            {
-                borrowMovies.ShowDialog();
-            }
+            // Current Page
         }
     }
 }

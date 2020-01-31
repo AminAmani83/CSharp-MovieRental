@@ -15,6 +15,8 @@ namespace CSharp_MovieRental
     {
         MovieRentalContext context; //connect to database
         User returningUser;
+        List<Movie> movieList;
+
         public FormReturnMovies()
         {
             InitializeComponent();
@@ -40,35 +42,38 @@ namespace CSharp_MovieRental
                 lblUser.Text = returningUser.UserId.ToString();
             }
 
-            List<Movie> movieList = new List<Movie>();
-
             List<BorrowHistory> bhList = context.BorrowHistories.Where(b => b.UserId == returningUser.UserId && DateTime.Compare(b.ReturnDate, new DateTime(1910,1,1,0,0,0)) < 0).ToList();
-            //label2.Text = bhList.Count.ToString();
+
+            movieList = new List<Movie>();
+
             foreach (BorrowHistory bh in bhList)
             {
                 movieList.Add(context.Movies.Where(m => m.MovieId == bh.MovieId).FirstOrDefault());
             }
            
             this.dataGridView1.DataSource = movieList;
-
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
             int movieId = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            //label2.Text = movieId.ToString();
 
             BorrowHistory borrowHistory = context.BorrowHistories.Where(b => b.UserId == returningUser.UserId && b.MovieId == movieId && DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).FirstOrDefault();
-            //label2.Text = borrowHistory.MovieId.ToString();
 
             borrowHistory.ReturnDate = DateTime.Now;
 
+            // Save to DB
             context.SaveChanges();
-            this.dataGridView1.Refresh();
+
+            MessageBox.Show("Movie Returned Successfully!");
+
+            // Removing Movie From the DataGridView
+            this.btnSearch.PerformClick();
         }
+
+        // Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
             using (FormManageMovies formMovies = new FormManageMovies())
             {
@@ -78,7 +83,6 @@ namespace CSharp_MovieRental
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
             using(FormManageUsers formUsers = new FormManageUsers())
             {
@@ -88,17 +92,11 @@ namespace CSharp_MovieRental
 
         private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            using (FormReturnMovies returnMovies = new FormReturnMovies())
-            {
-                returnMovies.ShowDialog();
-            }
+            // Current Page
         }
 
         private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
             using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
             {

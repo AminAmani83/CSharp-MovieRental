@@ -42,7 +42,7 @@ namespace CSharp_MovieRental
                 {
                     this.context.Movies.Remove(movie);
                     MessageBox.Show("Error Updating the Database",
-               "Entity Validation Exception");
+                    "Entity Validation Exception");
                 }             
             }     
             
@@ -52,25 +52,18 @@ namespace CSharp_MovieRental
            
             this.context.SaveChanges(); // write changes to database file
           
-
-            //refresh database
+            // Refresh Form Tables
             this.genreDataGridView.Refresh();
         }
 
-        //menus
+        // Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
-            using (FormManageMovies formMovies = new FormManageMovies())
-            {
-                formMovies.ShowDialog();
-            }
+            // Current Page
         }
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormManageUsers formUsers = new FormManageUsers())
             {
@@ -80,12 +73,15 @@ namespace CSharp_MovieRental
 
         private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            using (FormReturnMovies returnMovies = new FormReturnMovies())
+            {
+                returnMovies.ShowDialog();
+            }
         }
 
         private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
             {

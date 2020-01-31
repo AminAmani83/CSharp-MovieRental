@@ -55,9 +55,10 @@ namespace CSharp_MovieRental
             //refresh database
             this.firstNameTextBox.Refresh();
         }
+
+        // Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormManageMovies formMovies = new FormManageMovies())
             {
@@ -67,12 +68,11 @@ namespace CSharp_MovieRental
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // Current Page
         }
 
         private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormReturnMovies returnMovies = new FormReturnMovies())
             {
@@ -82,7 +82,6 @@ namespace CSharp_MovieRental
 
         private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
             {
