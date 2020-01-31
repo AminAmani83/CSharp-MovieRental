@@ -38,6 +38,8 @@
             this.manageMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSaveReport = new System.Windows.Forms.Button();
+            this.lblSort = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.OverDueMoviesDataGridView)).BeginInit();
             this.grpBorrowedMovies.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -64,7 +66,7 @@
             this.OverDueMoviesDataGridView.ReadOnly = true;
             this.OverDueMoviesDataGridView.RowHeadersWidth = 51;
             this.OverDueMoviesDataGridView.RowTemplate.Height = 24;
-            this.OverDueMoviesDataGridView.Size = new System.Drawing.Size(919, 213);
+            this.OverDueMoviesDataGridView.Size = new System.Drawing.Size(919, 323);
             this.OverDueMoviesDataGridView.TabIndex = 0;
             // 
             // grpBorrowedMovies
@@ -74,7 +76,7 @@
             this.grpBorrowedMovies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpBorrowedMovies.Name = "grpBorrowedMovies";
             this.grpBorrowedMovies.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpBorrowedMovies.Size = new System.Drawing.Size(972, 273);
+            this.grpBorrowedMovies.Size = new System.Drawing.Size(972, 382);
             this.grpBorrowedMovies.TabIndex = 14;
             this.grpBorrowedMovies.TabStop = false;
             this.grpBorrowedMovies.Text = "OverDue Movies";
@@ -131,7 +133,7 @@
             // 
             // btnSaveReport
             // 
-            this.btnSaveReport.Location = new System.Drawing.Point(883, 463);
+            this.btnSaveReport.Location = new System.Drawing.Point(883, 558);
             this.btnSaveReport.Name = "btnSaveReport";
             this.btnSaveReport.Size = new System.Drawing.Size(120, 23);
             this.btnSaveReport.TabIndex = 16;
@@ -139,11 +141,35 @@
             this.btnSaveReport.UseVisualStyleBackColor = true;
             this.btnSaveReport.Click += new System.EventHandler(this.btnSaveReport_Click);
             // 
+            // lblSort
+            // 
+            this.lblSort.AutoSize = true;
+            this.lblSort.Location = new System.Drawing.Point(829, 141);
+            this.lblSort.Name = "lblSort";
+            this.lblSort.Size = new System.Drawing.Size(58, 17);
+            this.lblSort.TabIndex = 17;
+            this.lblSort.Text = "Sort By:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "User ID",
+            "Movie ID",
+            "Borrow Date"});
+            this.comboBox1.Location = new System.Drawing.Point(905, 134);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 24);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // FormReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 593);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnSaveReport);
             this.Controls.Add(this.grpBorrowedMovies);
             this.Controls.Add(this.lblTitle);
@@ -172,5 +198,7 @@
         private System.Windows.Forms.ToolStripMenuItem manageMoviesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.Button btnSaveReport;
+        private System.Windows.Forms.Label lblSort;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
