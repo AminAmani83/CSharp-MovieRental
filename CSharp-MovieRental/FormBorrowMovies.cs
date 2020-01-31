@@ -139,11 +139,6 @@ namespace CSharp_MovieRental
             }
         }
 
-        private void comboGenre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         #region Navigation
         // Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
