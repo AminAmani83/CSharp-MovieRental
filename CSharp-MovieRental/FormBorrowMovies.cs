@@ -66,7 +66,7 @@ namespace CSharp_MovieRental
             } 
 
             List<Movie> resultMovieList = new List<Movie>();
-            string selectedGenre = ((string)comboGenre.SelectedItem);
+            string selectedGenre = (string)comboGenre.SelectedItem;
 
             if (selectedGenre == null || selectedGenre.Equals("All"))
             {
