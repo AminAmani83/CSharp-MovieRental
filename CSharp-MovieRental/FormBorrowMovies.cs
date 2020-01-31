@@ -54,7 +54,6 @@ namespace CSharp_MovieRental
             }
             else
             {
-                
                 List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
                 List<Movie> allMovieList = context.Movies.ToList();
                 foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
@@ -88,7 +87,7 @@ namespace CSharp_MovieRental
                     }
                     else
                     {
-                        MessageBox.Show("Sorry, Movie is Not Available");
+                        MessageBox.Show("Sorry, Movie is Not Available","Search Result",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         // txtSearchMovie.Text = "";
                         OnLoad(e);
                     }
@@ -98,11 +97,11 @@ namespace CSharp_MovieRental
                 {
                     if (String.IsNullOrEmpty(txtSearchMovie.Text))
                     {
-                        MessageBox.Show("Please type any movie name");
+                        MessageBox.Show("Please type any movie name", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Sorry Movie is Not Available");
+                        MessageBox.Show("Sorry Movie is Not Available", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtSearchMovie.Text = "";
                     }
                     this.movieDataGridView.DataSource = allMovieList;
@@ -138,7 +137,7 @@ namespace CSharp_MovieRental
                     cnn.Open();
                     adapter.InsertCommand = new SqlCommand(sql, cnn);
                     adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Movie Borrowed Successfully ! ");
+                    MessageBox.Show("Movie Borrowed Successfully ! ", "Borrow Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtSearchMovie.Text = "";
                     OnLoad(e);
 
