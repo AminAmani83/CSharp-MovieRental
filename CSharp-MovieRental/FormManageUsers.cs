@@ -25,6 +25,8 @@ namespace CSharp_MovieRental
             base.OnLoad(e);
             context = new MovieRentalContext();
             clearFields();
+            btnSave.Text = "SAVE";
+            btnDelete.Enabled = false;
 
             // binding the data to the source
             this.borrowHistoryBindingSource.DataSource = context.Users.Add(new User());
@@ -100,6 +102,21 @@ namespace CSharp_MovieRental
             lastNameTextBox.Clear();
             emailTextBox.Clear();
             phoneTextBox.Clear();
+        }
+
+        private void dataGridViewUsers_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridViewUsers.CurrentRow.Index != -1)
+            {
+                User selectedUser = (User)dataGridViewUsers.CurrentRow.DataBoundItem;
+                //MessageBox.Show("Hello"+selectedUser.FirstName);
+                firstNameTextBox.Text = selectedUser.FirstName;
+                lastNameTextBox.Text = selectedUser.LastName;
+                emailTextBox.Text = selectedUser.Email;
+                phoneTextBox.Text = selectedUser.Phone;
+                btnSave.Text = "UPDATE";
+                btnDelete.Enabled = true;
+            }
         }
     }
 }

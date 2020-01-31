@@ -384,6 +384,7 @@
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.Size = new System.Drawing.Size(480, 170);
             this.dataGridViewUsers.TabIndex = 19;
+            this.dataGridViewUsers.DoubleClick += new System.EventHandler(this.dataGridViewUsers_DoubleClick);
             // 
             // FormManageUsers
             // 
