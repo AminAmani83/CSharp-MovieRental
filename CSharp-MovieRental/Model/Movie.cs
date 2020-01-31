@@ -57,7 +57,8 @@ namespace CSharp_MovieRental
                 yield return "Synopsis is Mandatory.";
             }
 
-            if (Year.GetType() != typeof(int))
+            /*
+            if (!int.TryParse(Year, out int rrYear))
             {
                 yield return "Year is Invalid";
             }
@@ -69,6 +70,7 @@ namespace CSharp_MovieRental
             {
                 yield return "Duration is Invalid";
             }
+            */
 
         }
     }

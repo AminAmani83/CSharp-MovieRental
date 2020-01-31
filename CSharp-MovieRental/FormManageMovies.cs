@@ -60,7 +60,6 @@ namespace CSharp_MovieRental
             
 
             this.context.SaveChanges(); // write changes to database file
-            MessageBox.Show("Suceesfully add a movie");
             // Refresh Form Tables
             this.genreDataGridView.Refresh();
         }
@@ -124,6 +123,16 @@ namespace CSharp_MovieRental
             {
                 // do nothing
             }
+        }
+
+        private void movieBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            MessageBox.Show("Invalid Entry");
+        }
+
+        private void genreBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            MessageBox.Show("Invalid Entry");
         }
     }
 }

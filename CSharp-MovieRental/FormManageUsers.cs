@@ -60,7 +60,6 @@ namespace CSharp_MovieRental
             this.borrowHistoryBindingSource.EndEdit(); // complete current edit, if any
             
             this.context.SaveChanges(); // write changes to database file
-            MessageBox.Show("Suceesfully add a user");
             //refresh page
             resetForm();
         }
@@ -161,13 +160,29 @@ namespace CSharp_MovieRental
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            this.Validate(); // if any control has an event handler for the Validating event, it executes. 
+
             selectedUser.FirstName = firstNameTextBox.Text;
             selectedUser.LastName = lastNameTextBox.Text;
             selectedUser.Email = emailTextBox.Text;
             selectedUser.Phone = phoneTextBox.Text;
 
-            context.Entry(selectedUser).State = EntityState.Modified;
-            context.SaveChanges();
+                if (!selectedUser.IsValid())
+                {
+                    this.context.Users.Remove(selectedUser);
+                    List<string> errorList = selectedUser.Validate().ToList();
+                    string errorMsg = "";
+                    foreach (var error in errorList)
+                    {
+                        errorMsg += ("\n" + error);
+                    }
+                    MessageBox.Show("Error Updating the Database\n" + errorMsg, "Invalid Submission");
+                } else
+                {
+                    context.Entry(selectedUser).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+
             resetForm();
         }
         

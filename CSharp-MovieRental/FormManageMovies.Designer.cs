@@ -107,6 +107,7 @@
             // 
             this.movieBindingSource.DataMember = "Movie";
             this.movieBindingSource.DataSource = this.genreBindingSource;
+            this.movieBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.movieBindingSource_DataError);
             // 
             // menuStrip1
             // 
@@ -172,7 +173,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(1197, 338);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 31);
             this.btnSave.TabIndex = 5;
@@ -287,6 +288,7 @@
             // genreBindingSource
             // 
             this.genreBindingSource.DataSource = typeof(CSharp_MovieRental.Genre);
+            this.genreBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.genreBindingSource_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
