@@ -28,12 +28,24 @@ namespace CSharp_MovieRental
             //Loading categories from DB
             context.Genres.Load();
 
+            //context.BorrowHistories.
+
             context.Users.Load();
+            context.Movies.Load();
 
             //bingding the data to the source
             this.genreBindingSource.DataSource = context.Genres.Local.ToBindingList();
 
             this.userBindingSource.DataSource = context.Users.Local.ToBindingList();
+
+            List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
+            List<Movie> allMovieList = context.Movies.ToList();
+            foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
+            {
+                int movieIndex = allMovieList.IndexOf(unAvailableBorrowHistory.Movie);
+                allMovieList.RemoveAt(movieIndex);
+            }
+            this.movieDataGridView.DataSource = allMovieList;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -43,15 +55,8 @@ namespace CSharp_MovieRental
         private void btnBorrow_Click(object sender, EventArgs e)
         {
             User borrowingUser = context.Users.Where(u => u.Email.Equals(emailTextBox.Text)).FirstOrDefault();
-            if (borrowingUser != null)
-            {
 
-            }
-
-            //int useId = (int)userDataGridView.CurrentRow.Cells[0].Value;
-            //int userId = borrowingUser.UserId;
-
-            int movieId = (int)movieDataGridView.CurrentRow.Cells[0].Value;
+            int movieId = (int)this.movieDataGridView.CurrentRow.Cells[0].Value;
             //lblUserId.Text = "userId:"+useId +" MovieId: "+movieId;
 
             string connetionString = null;
@@ -62,34 +67,26 @@ namespace CSharp_MovieRental
 
             cnn = new SqlConnection(connetionString);
 
-
-            sql = "INSERT INTO BorrowHistories (BorrowDate, UserId, MovieId) VALUES (" + "'" + DateTime.Now + "'" + "," + borrowingUser.UserId + "," + movieId + ")";
-
-            try
+            if (borrowingUser == null)
             {
-                cnn.Open();
-                adapter.InsertCommand = new SqlCommand(sql, cnn);
-                adapter.InsertCommand.ExecuteNonQuery();
-                MessageBox.Show("Row inserted !! ");
+                MessageBox.Show("Invalid Email");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                sql = "INSERT INTO BorrowHistories (BorrowDate, UserId, MovieId) VALUES (" + "'" + DateTime.Now + "'" + "," + borrowingUser.UserId + "," + movieId + ")";
+                try
+                {
+                    cnn.Open();
+                    adapter.InsertCommand = new SqlCommand(sql, cnn);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("Row inserted !! ");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
 
-            /*
-            System.Data.SqlClient.SqlConnection sqlConnection1 =
-    new System.Data.SqlClient.SqlConnection("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=CSharp_MovieRental.MovieRentalContext;Integrated Security=True");
-
-            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO BorrowHistories (BorrowDate, UserId, MovieId) VALUES ("+DateTime.UtcNow.Date+","+ useId+","+movieId+")";
-            cmd.Connection = sqlConnection1;
-
-            sqlConnection1.Open();
-            cmd.ExecuteNonQuery();
-            sqlConnection1.Close();
-            */
         }
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -129,6 +126,11 @@ namespace CSharp_MovieRental
             {
                 borrowMovies.ShowDialog();
             }
+        }
+
+        private void movieDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

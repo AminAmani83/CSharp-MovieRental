@@ -298,12 +298,13 @@
             this.dataGridViewTextBoxColumn10});
             this.movieDataGridView.DataSource = this.movieBindingSource;
             this.movieDataGridView.Location = new System.Drawing.Point(8, 23);
-            this.movieDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.movieDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.movieDataGridView.Name = "movieDataGridView";
             this.movieDataGridView.ReadOnly = true;
             this.movieDataGridView.RowHeadersWidth = 51;
             this.movieDataGridView.Size = new System.Drawing.Size(1111, 134);
             this.movieDataGridView.TabIndex = 13;
+            this.movieDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.movieDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -398,7 +399,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(708, 174);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 14;
@@ -414,7 +415,7 @@
             this.dataGridViewTextBoxColumn12});
             this.genreDataGridView.DataSource = this.genreBindingSource;
             this.genreDataGridView.Location = new System.Drawing.Point(25, 151);
-            this.genreDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.genreDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.genreDataGridView.Name = "genreDataGridView";
             this.genreDataGridView.RowHeadersWidth = 51;
             this.genreDataGridView.Size = new System.Drawing.Size(513, 69);
@@ -431,7 +432,7 @@
             // btnBorrow
             // 
             this.btnBorrow.Location = new System.Drawing.Point(849, 475);
-            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(100, 28);
             this.btnBorrow.TabIndex = 15;
@@ -452,7 +453,7 @@
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
             this.emailTextBox.Location = new System.Drawing.Point(120, 479);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(605, 22);
             this.emailTextBox.TabIndex = 17;
@@ -465,9 +466,9 @@
             // 
             this.groupBoxMovieInfo.Controls.Add(this.movieDataGridView);
             this.groupBoxMovieInfo.Location = new System.Drawing.Point(17, 268);
-            this.groupBoxMovieInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxMovieInfo.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxMovieInfo.Name = "groupBoxMovieInfo";
-            this.groupBoxMovieInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxMovieInfo.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxMovieInfo.Size = new System.Drawing.Size(1151, 187);
             this.groupBoxMovieInfo.TabIndex = 18;
             this.groupBoxMovieInfo.TabStop = false;
