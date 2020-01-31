@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,6 +58,8 @@ namespace CSharp_MovieRental
            
             // Add movies to the form
             this.dataGridView1.DataSource = movieList;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -76,6 +78,12 @@ namespace CSharp_MovieRental
             context.SaveChanges();
 
             MessageBox.Show("Movie Returned Successfully!");
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            this.context.Dispose();
+            Application.Exit();
         }
 
         // Navigation
