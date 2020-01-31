@@ -40,6 +40,10 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.pbxMoviePoster = new System.Windows.Forms.PictureBox();
+            this.gbxGenre = new System.Windows.Forms.GroupBox();
+            this.gbxMoviePoster = new System.Windows.Forms.GroupBox();
+            this.gbxMovies = new System.Windows.Forms.GroupBox();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +59,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.movieDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMoviePoster)).BeginInit();
+            this.gbxGenre.SuspendLayout();
+            this.gbxMoviePoster.SuspendLayout();
+            this.gbxMovies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +74,11 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.genreDataGridView.DataSource = this.genreBindingSource;
-            this.genreDataGridView.Location = new System.Drawing.Point(15, 124);
+            this.genreDataGridView.Location = new System.Drawing.Point(31, 36);
             this.genreDataGridView.Name = "genreDataGridView";
             this.genreDataGridView.RowHeadersWidth = 51;
             this.genreDataGridView.RowTemplate.Height = 24;
-            this.genreDataGridView.Size = new System.Drawing.Size(391, 205);
+            this.genreDataGridView.Size = new System.Drawing.Size(391, 255);
             this.genreDataGridView.TabIndex = 1;
             // 
             // movieDataGridView
@@ -87,12 +95,13 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.movieDataGridView.DataSource = this.movieBindingSource;
-            this.movieDataGridView.Location = new System.Drawing.Point(15, 348);
+            this.movieDataGridView.Location = new System.Drawing.Point(31, 40);
             this.movieDataGridView.Name = "movieDataGridView";
             this.movieDataGridView.RowHeadersWidth = 51;
             this.movieDataGridView.RowTemplate.Height = 24;
-            this.movieDataGridView.Size = new System.Drawing.Size(1346, 375);
+            this.movieDataGridView.Size = new System.Drawing.Size(1266, 282);
             this.movieDataGridView.TabIndex = 2;
+            this.movieDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.movieDataGridView_CellClick);
             // 
             // movieBindingSource
             // 
@@ -154,7 +163,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(579, 48);
+            this.lblTitle.Location = new System.Drawing.Point(582, 70);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(165, 25);
             this.lblTitle.TabIndex = 4;
@@ -162,7 +171,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1222, 742);
+            this.btnSave.Location = new System.Drawing.Point(1197, 338);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 31);
@@ -170,6 +179,45 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.genreBindingNavigatorSaveItem_Click);
+            // 
+            // pbxMoviePoster
+            // 
+            this.pbxMoviePoster.Location = new System.Drawing.Point(28, 33);
+            this.pbxMoviePoster.Name = "pbxMoviePoster";
+            this.pbxMoviePoster.Size = new System.Drawing.Size(293, 258);
+            this.pbxMoviePoster.TabIndex = 6;
+            this.pbxMoviePoster.TabStop = false;
+            // 
+            // gbxGenre
+            // 
+            this.gbxGenre.Controls.Add(this.genreDataGridView);
+            this.gbxGenre.Location = new System.Drawing.Point(32, 113);
+            this.gbxGenre.Name = "gbxGenre";
+            this.gbxGenre.Size = new System.Drawing.Size(457, 312);
+            this.gbxGenre.TabIndex = 7;
+            this.gbxGenre.TabStop = false;
+            this.gbxGenre.Text = "Genre";
+            // 
+            // gbxMoviePoster
+            // 
+            this.gbxMoviePoster.Controls.Add(this.pbxMoviePoster);
+            this.gbxMoviePoster.Location = new System.Drawing.Point(1008, 113);
+            this.gbxMoviePoster.Name = "gbxMoviePoster";
+            this.gbxMoviePoster.Size = new System.Drawing.Size(353, 312);
+            this.gbxMoviePoster.TabIndex = 8;
+            this.gbxMoviePoster.TabStop = false;
+            this.gbxMoviePoster.Text = "Movie Poster";
+            // 
+            // gbxMovies
+            // 
+            this.gbxMovies.Controls.Add(this.movieDataGridView);
+            this.gbxMovies.Controls.Add(this.btnSave);
+            this.gbxMovies.Location = new System.Drawing.Point(32, 444);
+            this.gbxMovies.Name = "gbxMovies";
+            this.gbxMovies.Size = new System.Drawing.Size(1339, 384);
+            this.gbxMovies.TabIndex = 9;
+            this.gbxMovies.TabStop = false;
+            this.gbxMovies.Text = "Movies";
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -261,11 +309,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1387, 797);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(1387, 953);
+            this.Controls.Add(this.gbxMovies);
+            this.Controls.Add(this.gbxMoviePoster);
+            this.Controls.Add(this.gbxGenre);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.movieDataGridView);
-            this.Controls.Add(this.genreDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormManageMovies";
@@ -276,6 +324,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMoviePoster)).EndInit();
+            this.gbxGenre.ResumeLayout(false);
+            this.gbxMoviePoster.ResumeLayout(false);
+            this.gbxMovies.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -306,5 +358,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox pbxMoviePoster;
+        private System.Windows.Forms.GroupBox gbxGenre;
+        private System.Windows.Forms.GroupBox gbxMoviePoster;
+        private System.Windows.Forms.GroupBox gbxMovies;
     }
 }

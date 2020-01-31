@@ -26,11 +26,14 @@ namespace CSharp_MovieRental
             base.OnLoad(e);
             context = new MovieRentalContext();
 
-            //Loading categories from DB
+            // Loading categories from DB
             context.Genres.Load();
 
-            //bingding the data to the source
+            // Bingding the data to the source
             this.genreBindingSource.DataSource = context.Genres.Local.ToBindingList();
+
+            // Fit Images to PictureBox
+            pbxMoviePoster.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void genreBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -110,5 +113,16 @@ namespace CSharp_MovieRental
             }
         }
         #endregion
+
+        private void movieDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                pbxMoviePoster.Load(movieDataGridView.CurrentRow.Cells[7].Value.ToString());
+            } catch (Exception exp)
+            {
+                // do nothing
+            }
+        }
     }
 }
