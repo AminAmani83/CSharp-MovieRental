@@ -1,4 +1,4 @@
-﻿namespace CSharp_MovieRental
+namespace CSharp_MovieRental
 {
     partial class FormReports
     {
@@ -49,9 +49,10 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(388, 80);
+            this.lblTitle.Location = new System.Drawing.Point(291, 65);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(279, 29);
+            this.lblTitle.Size = new System.Drawing.Size(223, 24);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "OverDue Movie Report";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -61,22 +62,23 @@
             this.OverDueMoviesDataGridView.AllowUserToAddRows = false;
             this.OverDueMoviesDataGridView.AllowUserToDeleteRows = false;
             this.OverDueMoviesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OverDueMoviesDataGridView.Location = new System.Drawing.Point(24, 33);
+            this.OverDueMoviesDataGridView.Location = new System.Drawing.Point(18, 27);
+            this.OverDueMoviesDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OverDueMoviesDataGridView.Name = "OverDueMoviesDataGridView";
             this.OverDueMoviesDataGridView.ReadOnly = true;
             this.OverDueMoviesDataGridView.RowHeadersWidth = 51;
             this.OverDueMoviesDataGridView.RowTemplate.Height = 24;
-            this.OverDueMoviesDataGridView.Size = new System.Drawing.Size(919, 323);
+            this.OverDueMoviesDataGridView.Size = new System.Drawing.Size(577, 262);
             this.OverDueMoviesDataGridView.TabIndex = 0;
             // 
             // grpBorrowedMovies
             // 
             this.grpBorrowedMovies.Controls.Add(this.OverDueMoviesDataGridView);
-            this.grpBorrowedMovies.Location = new System.Drawing.Point(60, 160);
-            this.grpBorrowedMovies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpBorrowedMovies.Location = new System.Drawing.Point(45, 130);
+            this.grpBorrowedMovies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpBorrowedMovies.Name = "grpBorrowedMovies";
-            this.grpBorrowedMovies.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpBorrowedMovies.Size = new System.Drawing.Size(972, 382);
+            this.grpBorrowedMovies.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBorrowedMovies.Size = new System.Drawing.Size(707, 310);
             this.grpBorrowedMovies.TabIndex = 14;
             this.grpBorrowedMovies.TabStop = false;
             this.grpBorrowedMovies.Text = "OverDue Movies";
@@ -92,50 +94,52 @@
             this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1092, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(819, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // borrowMoviesToolStripMenuItem
             // 
             this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
-            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
             this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
             // 
             // returnMoviesToolStripMenuItem
             // 
             this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
-            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.returnMoviesToolStripMenuItem.Text = "Return Movies";
             this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageMoviesToolStripMenuItem
             // 
             this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
-            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
             this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
             // btnSaveReport
             // 
-            this.btnSaveReport.Location = new System.Drawing.Point(883, 558);
+            this.btnSaveReport.Location = new System.Drawing.Point(662, 453);
+            this.btnSaveReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveReport.Name = "btnSaveReport";
-            this.btnSaveReport.Size = new System.Drawing.Size(120, 23);
+            this.btnSaveReport.Size = new System.Drawing.Size(90, 19);
             this.btnSaveReport.TabIndex = 16;
             this.btnSaveReport.Text = "Save to File";
             this.btnSaveReport.UseVisualStyleBackColor = true;
@@ -144,9 +148,10 @@
             // lblSort
             // 
             this.lblSort.AutoSize = true;
-            this.lblSort.Location = new System.Drawing.Point(829, 141);
+            this.lblSort.Location = new System.Drawing.Point(622, 115);
+            this.lblSort.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSort.Name = "lblSort";
-            this.lblSort.Size = new System.Drawing.Size(58, 17);
+            this.lblSort.Size = new System.Drawing.Size(44, 13);
             this.lblSort.TabIndex = 17;
             this.lblSort.Text = "Sort By:";
             // 
@@ -157,17 +162,18 @@
             "User ID",
             "Movie ID",
             "Borrow Date"});
-            this.comboBox1.Location = new System.Drawing.Point(905, 134);
+            this.comboBox1.Location = new System.Drawing.Point(679, 109);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 24);
+            this.comboBox1.Size = new System.Drawing.Size(96, 21);
             this.comboBox1.TabIndex = 18;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FormReports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 593);
+            this.ClientSize = new System.Drawing.Size(819, 482);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnSaveReport);
@@ -175,6 +181,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormReports";
             this.Text = "FormReports";
             ((System.ComponentModel.ISupportInitialize)(this.OverDueMoviesDataGridView)).EndInit();
