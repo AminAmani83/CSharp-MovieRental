@@ -16,10 +16,11 @@ namespace CSharp_MovieRental
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormBorrowMovies());
+            //Application.Run(new FormBorrowMovies());
             //Application.Run(new FormManageMovies());
             //Application.Run(new FormManageUsers());
             //Application.Run(new FormReturnMovies());
+            Application.Run(new FormReports());
         }
     }
 }

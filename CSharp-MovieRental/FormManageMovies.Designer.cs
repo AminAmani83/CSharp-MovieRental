@@ -63,6 +63,7 @@
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingNavigator)).BeginInit();
             this.genreBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
@@ -332,7 +333,8 @@
             this.borrowMoviesToolStripMenuItem,
             this.returnMoviesToolStripMenuItem,
             this.manageUsersToolStripMenuItem,
-            this.manageMoviesToolStripMenuItem});
+            this.manageMoviesToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1386, 28);
@@ -376,6 +378,13 @@
             this.lblTitle.Size = new System.Drawing.Size(165, 25);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Manage Movies";
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
             // FormManageMovies
             // 
@@ -439,5 +448,6 @@
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageMoviesToolStripMenuItem;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
     }
 }

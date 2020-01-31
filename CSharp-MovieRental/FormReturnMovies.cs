@@ -110,6 +110,14 @@ namespace CSharp_MovieRental
             }
         }
 
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FormReports reports = new FormReports())
+            {
+                reports.ShowDialog();
+            }
+        }
     }
 }
 
