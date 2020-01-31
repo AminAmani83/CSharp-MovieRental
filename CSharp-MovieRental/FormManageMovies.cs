@@ -57,9 +57,10 @@ namespace CSharp_MovieRental
             this.genreBindingSource.EndEdit(); // complete current edit, if any
 
             // try to save changes
-           
+            
+
             this.context.SaveChanges(); // write changes to database file
-          
+            MessageBox.Show("Suceesfully add a movie");
             // Refresh Form Tables
             this.genreDataGridView.Refresh();
         }
