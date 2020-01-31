@@ -53,5 +53,39 @@ namespace CSharp_MovieRental
             //refresh database
             this.genreDataGridView.Refresh();
         }
+        private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            using (FormManageMovies formMovies = new FormManageMovies())
+            {
+                formMovies.ShowDialog();
+            }
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            using (FormManageUsers formUsers = new FormManageUsers())
+            {
+                formUsers.ShowDialog();
+            }
+        }
+
+        private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
+            {
+                borrowMovies.ShowDialog();
+            }
+        }
     }
 }

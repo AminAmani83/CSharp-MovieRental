@@ -145,33 +145,37 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(757, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(757, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // borrowMoviesToolStripMenuItem
             // 
             this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
-            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
+            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
+            this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
             // 
             // returnMoviesToolStripMenuItem
             // 
             this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
-            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.returnMoviesToolStripMenuItem.Text = "Return Movies";
+            this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageMoviesToolStripMenuItem
             // 
             this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
-            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
+            this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
             // 
             // borrowHistoryBindingSource
             // 
@@ -197,14 +201,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.borrowHistoryBindingNavigatorSaveItem});
-            this.borrowHistoryBindingNavigator.Location = new System.Drawing.Point(0, 30);
+            this.borrowHistoryBindingNavigator.Location = new System.Drawing.Point(0, 28);
             this.borrowHistoryBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.borrowHistoryBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.borrowHistoryBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.borrowHistoryBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.borrowHistoryBindingNavigator.Name = "borrowHistoryBindingNavigator";
             this.borrowHistoryBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.borrowHistoryBindingNavigator.Size = new System.Drawing.Size(757, 31);
+            this.borrowHistoryBindingNavigator.Size = new System.Drawing.Size(757, 27);
             this.borrowHistoryBindingNavigator.TabIndex = 8;
             this.borrowHistoryBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -214,13 +218,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -230,7 +234,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -239,7 +243,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -248,13 +252,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -269,7 +273,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -277,7 +281,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -286,20 +290,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // borrowHistoryBindingNavigatorSaveItem
             // 
             this.borrowHistoryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.borrowHistoryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("borrowHistoryBindingNavigatorSaveItem.Image")));
             this.borrowHistoryBindingNavigatorSaveItem.Name = "borrowHistoryBindingNavigatorSaveItem";
-            this.borrowHistoryBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
+            this.borrowHistoryBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.borrowHistoryBindingNavigatorSaveItem.Text = "Save Data";
             this.borrowHistoryBindingNavigatorSaveItem.Click += new System.EventHandler(this.borrowHistoryBindingNavigatorSaveItem_Click);
             // 
@@ -307,7 +311,7 @@
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.borrowHistoryBindingSource, "User.Email", true));
             this.emailTextBox.Location = new System.Drawing.Point(120, 159);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(132, 22);
             this.emailTextBox.TabIndex = 9;
@@ -316,7 +320,7 @@
             // 
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.borrowHistoryBindingSource, "User.FirstName", true));
             this.firstNameTextBox.Location = new System.Drawing.Point(120, 86);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(132, 22);
             this.firstNameTextBox.TabIndex = 11;
@@ -325,7 +329,7 @@
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.borrowHistoryBindingSource, "User.LastName", true));
             this.lastNameTextBox.Location = new System.Drawing.Point(120, 122);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(132, 22);
             this.lastNameTextBox.TabIndex = 13;
@@ -334,7 +338,7 @@
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.borrowHistoryBindingSource, "User.Phone", true));
             this.phoneTextBox.Location = new System.Drawing.Point(120, 194);
-            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(132, 22);
             this.phoneTextBox.TabIndex = 15;
@@ -343,7 +347,7 @@
             // 
             this.userIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.borrowHistoryBindingSource, "User.UserId", true));
             this.userIdTextBox.Location = new System.Drawing.Point(120, 50);
-            this.userIdTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userIdTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.userIdTextBox.Name = "userIdTextBox";
             this.userIdTextBox.ReadOnly = true;
             this.userIdTextBox.Size = new System.Drawing.Size(132, 22);
@@ -362,9 +366,9 @@
             this.groupBox1.Controls.Add(this.lastNameTextBox);
             this.groupBox1.Controls.Add(lastNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(56, 129);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(293, 247);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;

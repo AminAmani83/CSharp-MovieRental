@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReturnMovies));
             this.grpBorrowedMovies = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnReturn = new System.Windows.Forms.Button();
             this.grpUserInformation = new System.Windows.Forms.GroupBox();
@@ -58,14 +59,13 @@
             this.movieBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.lblUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpBorrowedMovies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             this.grpUserInformation.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingNavigator)).BeginInit();
             this.movieBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBorrowedMovies
@@ -79,6 +79,16 @@
             this.grpBorrowedMovies.TabIndex = 13;
             this.grpBorrowedMovies.TabStop = false;
             this.grpBorrowedMovies.Text = "Borrowed Movies";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(24, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(919, 213);
+            this.dataGridView1.TabIndex = 0;
             // 
             // movieBindingSource
             // 
@@ -168,24 +178,28 @@
             this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
             this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
+            this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
             // 
             // returnMoviesToolStripMenuItem
             // 
             this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
             this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.returnMoviesToolStripMenuItem.Text = "Return Movies";
+            this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageMoviesToolStripMenuItem
             // 
             this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
             this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
+            this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
             // 
             // movieBindingNavigator
             // 
@@ -270,6 +284,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -330,16 +345,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(919, 213);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // FormReturnMovies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -357,6 +362,7 @@
             this.Name = "FormReturnMovies";
             this.Text = "FormReturn";
             this.grpBorrowedMovies.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             this.grpUserInformation.ResumeLayout(false);
             this.grpUserInformation.PerformLayout();
@@ -365,7 +371,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingNavigator)).EndInit();
             this.movieBindingNavigator.ResumeLayout(false);
             this.movieBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
