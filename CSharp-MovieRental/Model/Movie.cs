@@ -30,7 +30,7 @@ namespace CSharp_MovieRental
         {
             if (string.IsNullOrEmpty(this.Name))
             {
-                yield return "First name is Mandatory.";
+                yield return "Movie name is Mandatory.";
             }
             if (string.IsNullOrEmpty(this.Director))
             {
@@ -38,15 +38,15 @@ namespace CSharp_MovieRental
             }
             if (this.Rating > 10)
             {
-                yield return "Rating must between 0-10.";
+                yield return "Rating must be between 0-10.";
             }
             if (this.Rating <= 0)
             {
-                yield return "Rating must between 0-10.";
+                yield return "Rating must be between 0-10.";
             }
-            if (this.Year > 2020)
+            if (this.Year > 3000)
             {
-                yield return "Year is over 2020.";
+                yield return "Year is invalid.";
             }
             if (this.Year < 1800)
             {
