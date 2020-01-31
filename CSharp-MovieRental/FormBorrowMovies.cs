@@ -49,7 +49,7 @@ namespace CSharp_MovieRental
         {
             if (String.IsNullOrEmpty(txtSearchMovie.Text))
             {
-                MessageBox.Show("Please type any movie name");
+                // Showing All Movies
                 OnLoad(e);
             }
             else
@@ -65,7 +65,7 @@ namespace CSharp_MovieRental
                 List<Movie> resultMovieList = new List<Movie>();
 
                 bool result = false;
-                List<Movie> searchMovie = context.Movies.Where(m => m.Name.StartsWith(txtSearchMovie.Text)).ToList();
+                List<Movie> searchMovie = context.Movies.Where(m => m.Name.Contains(txtSearchMovie.Text)).ToList();
                 if (searchMovie != null)
                 {
                     //lblMovie.Text = searchMovie.MovieId.ToString();
@@ -87,8 +87,8 @@ namespace CSharp_MovieRental
                     }
                     else
                     {
-                        MessageBox.Show("Sorry Movie is Not Available");
-                        txtSearchMovie.Text = "";
+                        MessageBox.Show("Sorry, Movie is Not Available");
+                        // txtSearchMovie.Text = "";
                         OnLoad(e);
                     }
 
