@@ -124,7 +124,6 @@ namespace CSharp_MovieRental
             // populate user list
             List<User> userList = context.Users.ToList();
             this.dataGridViewUsers.DataSource = userList;
-            dataGridViewUsers.Columns[0].Visible = false;
         }
 
         private void dataGridViewUsers_DoubleClick(object sender, EventArgs e)
