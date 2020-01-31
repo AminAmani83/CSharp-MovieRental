@@ -42,10 +42,72 @@ namespace CSharp_MovieRental
                 allMovieList.RemoveAt(movieIndex);
             }
             this.movieDataGridView.DataSource = allMovieList;
+            emailTextBox.Text = "";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtSearchMovie.Text))
+            {
+                MessageBox.Show("Please type any movie name");
+                OnLoad(e);
+            }
+            else
+            {
+                List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
+                List<Movie> allMovieList = context.Movies.ToList();
+                foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
+                {
+                    int movieIndex = allMovieList.IndexOf(unAvailableBorrowHistory.Movie);
+                    allMovieList.RemoveAt(movieIndex);
+                }
+
+                List<Movie> resultMovieList = new List<Movie>();
+
+                bool result = false;
+                List<Movie> searchMovie = context.Movies.Where(m => m.Name.StartsWith(txtSearchMovie.Text)).ToList();
+                if (searchMovie != null)
+                {
+                    //lblMovie.Text = searchMovie.MovieId.ToString();
+                    foreach (Movie movie in allMovieList)
+                    {
+                        foreach (Movie s in searchMovie)
+                        {
+                            if (s.MovieId.Equals(movie.MovieId))
+                            {
+                                resultMovieList.Add(movie);
+                                result = true;
+                            }
+
+                        }
+                    }
+                    if (result == true)
+                    {
+                        this.movieDataGridView.DataSource = resultMovieList;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry Movie is Not Available");
+                        txtSearchMovie.Text = "";
+                        OnLoad(e);
+                    }
+
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(txtSearchMovie.Text))
+                    {
+                        MessageBox.Show("Please type any movie name");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry Movie is Not Available");
+                        txtSearchMovie.Text = "";
+                    }
+                    this.movieDataGridView.DataSource = allMovieList;
+                }
+            }
+
         }
 
         private void btnBorrow_Click(object sender, EventArgs e)
@@ -65,6 +127,7 @@ namespace CSharp_MovieRental
             if (borrowingUser == null)
             {
                 MessageBox.Show("Please Enter Valid Email");
+                emailTextBox.Text = "";
             }
             else
             {
@@ -74,7 +137,8 @@ namespace CSharp_MovieRental
                     cnn.Open();
                     adapter.InsertCommand = new SqlCommand(sql, cnn);
                     adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Movie Borrowed Successfully!");
+                    MessageBox.Show("Movie Borrowed Successfully ! ");
+                    txtSearchMovie.Text = "";
                     OnLoad(e);
 
                 }
