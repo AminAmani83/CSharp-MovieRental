@@ -15,6 +15,7 @@ namespace CSharp_MovieRental
     public partial class FormManageUsers : Form
     {
         MovieRentalContext context; //connect to database
+        User selectedUser;
         public FormManageUsers()
         {
             InitializeComponent();
@@ -108,8 +109,8 @@ namespace CSharp_MovieRental
         {
             if (dataGridViewUsers.CurrentRow.Index != -1)
             {
-                User selectedUser = (User)dataGridViewUsers.CurrentRow.DataBoundItem;
-                //MessageBox.Show("Hello"+selectedUser.FirstName);
+                // Extracting a user from the form
+                selectedUser = (User)dataGridViewUsers.CurrentRow.DataBoundItem;
                 firstNameTextBox.Text = selectedUser.FirstName;
                 lastNameTextBox.Text = selectedUser.LastName;
                 emailTextBox.Text = selectedUser.Email;
@@ -117,6 +118,21 @@ namespace CSharp_MovieRental
                 btnSave.Text = "UPDATE";
                 btnDelete.Enabled = true;
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            OnLoad(e);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this profile?","Delete Profile",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                context.Users.Remove(selectedUser);
+                context.SaveChanges();
+            }
+            OnLoad(e);
         }
     }
 }
