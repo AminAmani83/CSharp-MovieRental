@@ -41,7 +41,12 @@ namespace CSharp_MovieRental
                 if (!movie.IsValid())
                 {
                     this.context.Movies.Remove(movie);
-                    MessageBox.Show("Error Updating the Database",
+                    StringBuilder str = new StringBuilder();
+                    foreach(string error in movie.Validate())
+                    {
+                        str.AppendLine(error);
+                    }
+                    MessageBox.Show("Error Updating the Database/n"+str,
                     "Entity Validation Exception");
                 }             
             }     
@@ -56,7 +61,7 @@ namespace CSharp_MovieRental
             this.genreDataGridView.Refresh();
         }
 
-        // Navigation
+        #region// Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Current Page
@@ -97,5 +102,6 @@ namespace CSharp_MovieRental
                 reports.ShowDialog();
             }
         }
+        #endregion
     }
 }
