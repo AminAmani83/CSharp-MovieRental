@@ -96,6 +96,13 @@ namespace CSharp_MovieRental
             }
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            this.context.Dispose();
+            Application.Exit();
+        }
+
         #region Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
