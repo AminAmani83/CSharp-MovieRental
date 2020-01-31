@@ -36,20 +36,21 @@ namespace CSharp_MovieRental
         private void borrowHistoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate(); // if any control has an event handler for the Validating event, it executes. 
+            foreach (var user in context.Users.Local.ToList())
+            {
+                if (!user.IsValid())
+                {
+                    this.context.Users.Remove(user);
+                    MessageBox.Show("Error Updating the Database",
+               "Entity Validation Exception");
+                }
+            }
 
-            //this.borrowHistoryBindingSource.EndEdit(); // complete current edit, if any
+            this.borrowHistoryBindingSource.EndEdit(); // complete current edit, if any
 
             // try to save changes
-            try
-            {
-                this.context.SaveChanges(); // write changes to database file
-                //this.firstNameTextBox.Clear();
-            }
-            catch (DbEntityValidationException)
-            {
-                MessageBox.Show("Error Updating the Database",
-                "Entity Validation Exception");
-            }
+
+            this.context.SaveChanges(); // write changes to database file
 
             //refresh database
             this.firstNameTextBox.Refresh();

@@ -36,23 +36,28 @@ namespace CSharp_MovieRental
         private void genreBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate(); // if any control has an event handler for the Validating event, it executes. 
-
+            foreach (var movie in context.Movies.Local.ToList())
+            {
+                if (!movie.IsValid())
+                {
+                    this.context.Movies.Remove(movie);
+                    MessageBox.Show("Error Updating the Database",
+               "Entity Validation Exception");
+                }             
+            }     
+            
             this.genreBindingSource.EndEdit(); // complete current edit, if any
 
             // try to save changes
-            try
-            {
-                this.context.SaveChanges(); // write changes to database file
-            }
-            catch (DbEntityValidationException)
-            {
-                MessageBox.Show("Error Updating the Database",
-                "Entity Validation Exception");
-            }
+           
+            this.context.SaveChanges(); // write changes to database file
+          
 
             //refresh database
             this.genreDataGridView.Refresh();
         }
+
+        //menus
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
