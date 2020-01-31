@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +40,8 @@ namespace CSharp_MovieRental
 
             // bingding the data to the control in form
             this.OverDueMoviesDataGridView.DataSource = bhList;
+            OverDueMoviesDataGridView.Columns[5].Visible = false;
+            OverDueMoviesDataGridView.Columns[6].Visible = false;
         }
 
         private void btnSaveReport_Click(object sender, EventArgs e)
