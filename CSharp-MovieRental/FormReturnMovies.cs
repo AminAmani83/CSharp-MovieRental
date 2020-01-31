@@ -36,19 +36,21 @@ namespace CSharp_MovieRental
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            movieList = new ObservableListSource<Movie>();
+            this.dataGridView1.DataSource = movieList;
+
             returningUser = context.Users.Where(u => u.Email.Equals(txtUserEmail.Text)).FirstOrDefault();
-            
+
             if (returningUser == null) // user does not exist
             {
                 MessageBox.Show("User not found, Please try again.");
                 this.txtUserEmail.Focus();
+                movieList.Clear();
                 return;
             }
 
             // Find the records (in the borrowHistory table) related to movies that were borrowed by this user but never returned (return date is 1900)
             List<BorrowHistory> bhList = context.BorrowHistories.Where(b => b.UserId == returningUser.UserId && DateTime.Compare(b.ReturnDate, new DateTime(1910,1,1,0,0,0)) < 0).ToList();
-
-            movieList = new ObservableListSource<Movie>();
 
             // Find the movies related to above records
             foreach (BorrowHistory bh in bhList)
@@ -57,7 +59,6 @@ namespace CSharp_MovieRental
             }
            
             // Add movies to the form
-            this.dataGridView1.DataSource = movieList;
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
         }

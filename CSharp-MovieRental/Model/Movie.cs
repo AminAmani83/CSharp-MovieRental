@@ -56,6 +56,20 @@ namespace CSharp_MovieRental
             {
                 yield return "Synopsis is Mandatory.";
             }
+
+            if (Year.GetType() != typeof(int))
+            {
+                yield return "Year is Invalid";
+            }
+            if (Rating.GetType() != typeof(decimal))
+            {
+                yield return "Rating is Invalid";
+            }
+            if (Duration.GetType() != typeof(int))
+            {
+                yield return "Duration is Invalid";
+            }
+
         }
     }
 }
