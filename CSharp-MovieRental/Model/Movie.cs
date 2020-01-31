@@ -36,7 +36,7 @@ namespace CSharp_MovieRental
             {
                 yield return "Director's name is Mandatory.";
             }
-            if (this.Rating > 5)
+            if (this.Rating > 10)
             {
                 yield return "Rating must between 0-10.";
             }
