@@ -171,6 +171,13 @@ namespace CSharp_MovieRental
             context.SaveChanges();
             resetForm();
         }
+        
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            this.context.Dispose();
+            Application.Exit();
+        }
     }
 }
 
