@@ -26,6 +26,7 @@ namespace CSharp_MovieRental
 
         public IEnumerable<string> Validate()
         {
+            string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             if (string.IsNullOrEmpty(this.FirstName))
             {
                 yield return "First Name is mandatory.";
@@ -39,11 +40,19 @@ namespace CSharp_MovieRental
             {
                 yield return "Email is mandatory.";
             }
-          
+            if (!Regex.Match(this.Email, pattern).Success)
+
+            {
+                yield return "Email is not correct.";
+            }
             if (string.IsNullOrEmpty(this.Phone))
             {
                 yield return "Phone is mandatory.";
-                
+
+            }
+            if (!Regex.Match(this.Phone, @"^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$").Success)
+            {
+                yield return "Phone Number is not correct.";
             }
         }
     }
