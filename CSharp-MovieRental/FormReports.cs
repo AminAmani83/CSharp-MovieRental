@@ -96,8 +96,7 @@ namespace CSharp_MovieRental
             }
         }
 
-
-        // Navigation
+        #region Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -138,5 +137,6 @@ namespace CSharp_MovieRental
         {
             // Current Page
         }
+        #endregion
     }
 }

@@ -61,6 +61,7 @@ namespace CSharp_MovieRental
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDataGridView)).BeginInit();
@@ -75,10 +76,9 @@ namespace CSharp_MovieRental
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(481, 56);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle.Location = new System.Drawing.Point(641, 69);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(148, 24);
+            this.lblTitle.Size = new System.Drawing.Size(187, 29);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Borrow Movies";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -90,40 +90,42 @@ namespace CSharp_MovieRental
             this.borrowMoviesToolStripMenuItem,
             this.returnMoviesToolStripMenuItem,
             this.manageUsersToolStripMenuItem,
-            this.manageMoviesToolStripMenuItem});
+            this.manageMoviesToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1104, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1472, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // borrowMoviesToolStripMenuItem
             // 
             this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
-            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
             this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
             this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
             // 
             // returnMoviesToolStripMenuItem
             // 
             this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
-            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.returnMoviesToolStripMenuItem.Text = "Return Movies";
             this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageMoviesToolStripMenuItem
             // 
             this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
-            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
+            this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
             // 
             // movieBindingSource
             // 
@@ -146,18 +148,20 @@ namespace CSharp_MovieRental
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.movieDataGridView.DataSource = this.movieBindingSource;
-            this.movieDataGridView.Location = new System.Drawing.Point(9, 32);
+            this.movieDataGridView.Location = new System.Drawing.Point(12, 39);
+            this.movieDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.movieDataGridView.Name = "movieDataGridView";
             this.movieDataGridView.ReadOnly = true;
             this.movieDataGridView.RowHeadersWidth = 51;
-            this.movieDataGridView.Size = new System.Drawing.Size(1054, 276);
+            this.movieDataGridView.Size = new System.Drawing.Size(1405, 340);
             this.movieDataGridView.TabIndex = 13;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(988, 35);
+            this.btnSearch.Location = new System.Drawing.Point(1317, 43);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -166,17 +170,20 @@ namespace CSharp_MovieRental
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(60, 323);
+            this.lblUserId.Location = new System.Drawing.Point(80, 398);
+            this.lblUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(0, 13);
+            this.lblUserId.Size = new System.Drawing.Size(0, 17);
             this.lblUserId.TabIndex = 16;
             // 
             // groupBoxMovieInfo
             // 
             this.groupBoxMovieInfo.Controls.Add(this.movieDataGridView);
-            this.groupBoxMovieInfo.Location = new System.Drawing.Point(13, 206);
+            this.groupBoxMovieInfo.Location = new System.Drawing.Point(17, 254);
+            this.groupBoxMovieInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxMovieInfo.Name = "groupBoxMovieInfo";
-            this.groupBoxMovieInfo.Size = new System.Drawing.Size(1085, 326);
+            this.groupBoxMovieInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxMovieInfo.Size = new System.Drawing.Size(1447, 401);
             this.groupBoxMovieInfo.TabIndex = 18;
             this.groupBoxMovieInfo.TabStop = false;
             this.groupBoxMovieInfo.Text = "Available Movies";
@@ -186,9 +193,11 @@ namespace CSharp_MovieRental
             this.groupBoxBorrow.Controls.Add(this.emailLabel);
             this.groupBoxBorrow.Controls.Add(this.emailTextBox);
             this.groupBoxBorrow.Controls.Add(this.btnBorrow);
-            this.groupBoxBorrow.Location = new System.Drawing.Point(13, 539);
+            this.groupBoxBorrow.Location = new System.Drawing.Point(17, 663);
+            this.groupBoxBorrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxBorrow.Name = "groupBoxBorrow";
-            this.groupBoxBorrow.Size = new System.Drawing.Size(1085, 100);
+            this.groupBoxBorrow.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxBorrow.Size = new System.Drawing.Size(1447, 123);
             this.groupBoxBorrow.TabIndex = 19;
             this.groupBoxBorrow.TabStop = false;
             this.groupBoxBorrow.Text = "Borrow";
@@ -196,25 +205,28 @@ namespace CSharp_MovieRental
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(30, 50);
+            this.emailLabel.Location = new System.Drawing.Point(40, 62);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(35, 13);
+            this.emailLabel.Size = new System.Drawing.Size(46, 17);
             this.emailLabel.TabIndex = 19;
             this.emailLabel.Text = "Email:";
             // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(104, 43);
+            this.emailTextBox.Location = new System.Drawing.Point(139, 53);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(455, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(605, 22);
             this.emailTextBox.TabIndex = 20;
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(651, 40);
+            this.btnBorrow.Location = new System.Drawing.Point(868, 49);
+            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrow.Size = new System.Drawing.Size(100, 28);
             this.btnBorrow.TabIndex = 18;
             this.btnBorrow.Text = "Borrow";
             this.btnBorrow.UseVisualStyleBackColor = true;
@@ -229,9 +241,11 @@ namespace CSharp_MovieRental
             this.groupBoxSearchMovies.Controls.Add(this.txtSearchMovie);
             this.groupBoxSearchMovies.Controls.Add(this.lblSearchName);
             this.groupBoxSearchMovies.Controls.Add(this.btnSearch);
-            this.groupBoxSearchMovies.Location = new System.Drawing.Point(13, 107);
+            this.groupBoxSearchMovies.Location = new System.Drawing.Point(17, 132);
+            this.groupBoxSearchMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxSearchMovies.Name = "groupBoxSearchMovies";
-            this.groupBoxSearchMovies.Size = new System.Drawing.Size(1085, 95);
+            this.groupBoxSearchMovies.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSearchMovies.Size = new System.Drawing.Size(1447, 117);
             this.groupBoxSearchMovies.TabIndex = 20;
             this.groupBoxSearchMovies.TabStop = false;
             this.groupBoxSearchMovies.Text = "Search in Movies";
@@ -239,52 +253,56 @@ namespace CSharp_MovieRental
             // comboGenre
             // 
             this.comboGenre.FormattingEnabled = true;
-            this.comboGenre.Location = new System.Drawing.Point(634, 41);
+            this.comboGenre.Location = new System.Drawing.Point(845, 43);
+            this.comboGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboGenre.Name = "comboGenre";
-            this.comboGenre.Size = new System.Drawing.Size(121, 21);
+            this.comboGenre.Size = new System.Drawing.Size(160, 24);
             this.comboGenre.TabIndex = 17;
-            this.comboGenre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboGenre_MouseClick);
+            this.comboGenre.SelectedIndexChanged += new System.EventHandler(this.comboGenre_SelectedIndexChanged);
             // 
             // lblSearchByGenre
             // 
             this.lblSearchByGenre.AutoSize = true;
-            this.lblSearchByGenre.Location = new System.Drawing.Point(582, 37);
+            this.lblSearchByGenre.Location = new System.Drawing.Point(776, 46);
+            this.lblSearchByGenre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchByGenre.Name = "lblSearchByGenre";
-            this.lblSearchByGenre.Size = new System.Drawing.Size(36, 13);
+            this.lblSearchByGenre.Size = new System.Drawing.Size(48, 17);
             this.lblSearchByGenre.TabIndex = 16;
             this.lblSearchByGenre.Text = "Genre";
             // 
             // lblMessage1
             // 
             this.lblMessage1.AutoSize = true;
-            this.lblMessage1.Location = new System.Drawing.Point(104, 62);
-            this.lblMessage1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMessage1.Location = new System.Drawing.Point(139, 76);
             this.lblMessage1.Name = "lblMessage1";
-            this.lblMessage1.Size = new System.Drawing.Size(223, 13);
+            this.lblMessage1.Size = new System.Drawing.Size(299, 17);
             this.lblMessage1.TabIndex = 15;
             this.lblMessage1.Text = "Leave this field empty to search for all movies.";
             // 
             // lblMovie
             // 
             this.lblMovie.AutoSize = true;
-            this.lblMovie.Location = new System.Drawing.Point(65, 58);
+            this.lblMovie.Location = new System.Drawing.Point(87, 71);
+            this.lblMovie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMovie.Name = "lblMovie";
-            this.lblMovie.Size = new System.Drawing.Size(0, 13);
+            this.lblMovie.Size = new System.Drawing.Size(0, 17);
             this.lblMovie.TabIndex = 2;
             // 
             // txtSearchMovie
             // 
-            this.txtSearchMovie.Location = new System.Drawing.Point(104, 37);
+            this.txtSearchMovie.Location = new System.Drawing.Point(139, 46);
+            this.txtSearchMovie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchMovie.Name = "txtSearchMovie";
-            this.txtSearchMovie.Size = new System.Drawing.Size(455, 20);
+            this.txtSearchMovie.Size = new System.Drawing.Size(605, 22);
             this.txtSearchMovie.TabIndex = 1;
             // 
             // lblSearchName
             // 
             this.lblSearchName.AutoSize = true;
-            this.lblSearchName.Location = new System.Drawing.Point(30, 41);
+            this.lblSearchName.Location = new System.Drawing.Point(40, 50);
+            this.lblSearchName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(35, 13);
+            this.lblSearchName.Size = new System.Drawing.Size(45, 17);
             this.lblSearchName.TabIndex = 0;
             this.lblSearchName.Text = "Name";
             // 
@@ -368,11 +386,18 @@ namespace CSharp_MovieRental
             // 
             this.genreBindingSource.DataSource = typeof(CSharp_MovieRental.Genre);
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
+            // 
             // FormBorrowMovies
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 639);
+            this.ClientSize = new System.Drawing.Size(1472, 786);
             this.Controls.Add(this.groupBoxSearchMovies);
             this.Controls.Add(this.groupBoxBorrow);
             this.Controls.Add(this.groupBoxMovieInfo);
@@ -380,7 +405,7 @@ namespace CSharp_MovieRental
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormBorrowMovies";
             this.Text = "Borrow Movies";
             this.menuStrip1.ResumeLayout(false);
@@ -433,6 +458,7 @@ namespace CSharp_MovieRental
         private System.Windows.Forms.Label lblMessage1;
         private System.Windows.Forms.Label lblSearchByGenre;
         private System.Windows.Forms.ComboBox comboGenre;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
     }
 }
 

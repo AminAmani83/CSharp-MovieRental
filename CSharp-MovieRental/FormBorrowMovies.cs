@@ -29,11 +29,20 @@ namespace CSharp_MovieRental
             context.Users.Load();
             context.Movies.Load();
 
-            //bingding the data to the source
+            // Bingding the data to the source
             this.genreBindingSource.DataSource = context.Genres.Local.ToBindingList();
-
             this.userBindingSource.DataSource = context.Users.Local.ToBindingList();
-            
+
+            // Fill the Genre ComboBox
+            comboGenre.Items.Clear();
+            List<Genre> gettingGenres = context.Genres.ToList();
+            this.comboGenre.Items.Add("All");
+            foreach (Genre genre in gettingGenres)
+            {
+                this.comboGenre.Items.Add(genre.Name);
+            }
+
+            // Find All Available Movies
             List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
             List<Movie> allMovieList = context.Movies.ToList();
             foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
@@ -47,66 +56,46 @@ namespace CSharp_MovieRental
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtSearchMovie.Text))
+            List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
+            List<Movie> allMovieList = context.Movies.ToList();
+            // Getting all available movies
+            foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
             {
-                // Showing All Movies
-                OnLoad(e);
+                int movieIndex = allMovieList.IndexOf(unAvailableBorrowHistory.Movie);
+                allMovieList.RemoveAt(movieIndex);
+            } 
+
+            List<Movie> resultMovieList = new List<Movie>();
+            string selectedGenre = ((string)comboGenre.SelectedItem);
+
+            if (selectedGenre == null || selectedGenre.Equals("All"))
+            {
+                foreach (Movie movie in allMovieList)
+                {
+                    if (movie.Name.Contains(this.txtSearchMovie.Text))
+                    {
+                        resultMovieList.Add(movie);
+                    }
+                }
+            } else
+            {
+                foreach (Movie movie in allMovieList)
+                {
+                    if (movie.Name.Contains(this.txtSearchMovie.Text) && movie.Genre.Name.Equals(selectedGenre))
+                    {
+                        resultMovieList.Add(movie);
+                    }
+                }
+            }
+
+            if (resultMovieList.Count > 0)
+            {
+                this.movieDataGridView.DataSource = resultMovieList;
             }
             else
             {
-                
-                List<BorrowHistory> unAvailableBorrowHistoryList = context.BorrowHistories.Where(b => DateTime.Compare(b.ReturnDate, new DateTime(1910, 1, 1, 0, 0, 0)) < 0).ToList();
-                List<Movie> allMovieList = context.Movies.ToList();
-                foreach (BorrowHistory unAvailableBorrowHistory in unAvailableBorrowHistoryList)
-                {
-                    int movieIndex = allMovieList.IndexOf(unAvailableBorrowHistory.Movie);
-                    allMovieList.RemoveAt(movieIndex);
-                }
-
-                List<Movie> resultMovieList = new List<Movie>();
-
-                bool result = false;
-                List<Movie> searchMovie = context.Movies.Where(m => m.Name.Contains(txtSearchMovie.Text)).ToList();
-                if (searchMovie != null)
-                {
-                    //lblMovie.Text = searchMovie.MovieId.ToString();
-                    foreach (Movie movie in allMovieList)
-                    {
-                        foreach (Movie s in searchMovie)
-                        {
-                            if (s.MovieId.Equals(movie.MovieId))
-                            {
-                                resultMovieList.Add(movie);
-                                result = true;
-                            }
-
-                        }
-                    }
-                    if (result == true)
-                    {
-                        this.movieDataGridView.DataSource = resultMovieList;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sorry, Movie is Not Available");
-                        // txtSearchMovie.Text = "";
-                        OnLoad(e);
-                    }
-
-                }
-                else
-                {
-                    if (String.IsNullOrEmpty(txtSearchMovie.Text))
-                    {
-                        MessageBox.Show("Please type any movie name");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sorry Movie is Not Available");
-                        txtSearchMovie.Text = "";
-                    }
-                    this.movieDataGridView.DataSource = allMovieList;
-                }
+                MessageBox.Show("Sorry, Movie is Not Available. Loading all movies instead...");
+                OnLoad(e);
             }
 
         }
@@ -150,6 +139,12 @@ namespace CSharp_MovieRental
             }
         }
 
+        private void comboGenre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Navigation
         // Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -182,16 +177,15 @@ namespace CSharp_MovieRental
         {
             // Current Page
         }
-
-        private void comboGenre_MouseClick(object sender, MouseEventArgs e)
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            comboGenre.Items.Clear();
-
-            List<Genre> gettingGenres = context.Genres.ToList();
-            foreach (Genre genre in gettingGenres)
+            this.Hide();
+            using (FormReports reports = new FormReports())
             {
-                this.comboGenre.Items.Add(genre.Name);
+                reports.ShowDialog();
             }
         }
+        #endregion
+
     }
 }
