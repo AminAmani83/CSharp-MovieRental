@@ -46,7 +46,7 @@ namespace CSharp_MovieRental
                     {
                         str.AppendLine(error);
                     }
-                    MessageBox.Show("Error Updating the Database/n"+str,
+                    MessageBox.Show("Error Updating the Database\n"+str,
                     "Entity Validation Exception");
                 }             
             }     
