@@ -24,39 +24,43 @@ namespace CSharp_MovieRental
         {
             base.OnLoad(e);
             context = new MovieRentalContext();
+            clearFields();
 
-            //Loading categories from DB
-            //context.Users.Load();
-
-            //bingding the data to the source
+            // binding the data to the source
             this.borrowHistoryBindingSource.DataSource = context.Users.Add(new User());
-                
+
+            // populate user list
+            List<User> userList = context.Users.ToList();
+            this.dataGridViewUsers.DataSource = userList;
+            dataGridViewUsers.Columns[0].Visible = false;
         }
 
         private void borrowHistoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate(); // if any control has an event handler for the Validating event, it executes. 
+            
+            /*
             foreach (var user in context.Users.Local.ToList())
             {
                 if (!user.IsValid())
                 {
-                    this.context.Users.Remove(user);
-                    MessageBox.Show("Error Updating the Database",
-               "Entity Validation Exception");
+                    //this.context.Users.Remove(user);
+                    //MessageBox.Show("Error Updating the Database","Entity Validation Exception");
+                    MessageBox.Show("User is invalid");
                 }
             }
+            */
 
             this.borrowHistoryBindingSource.EndEdit(); // complete current edit, if any
 
-            // try to save changes
-
             this.context.SaveChanges(); // write changes to database file
 
-            //refresh database
-            this.firstNameTextBox.Refresh();
+            //refresh page
+            //clearFields();
+            OnLoad(e);
         }
 
-        // Navigation
+        #region Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -87,6 +91,15 @@ namespace CSharp_MovieRental
             {
                 borrowMovies.ShowDialog();
             }
+        }
+        #endregion
+
+        public void clearFields()
+        {
+            firstNameTextBox.Clear();
+            lastNameTextBox.Clear();
+            emailTextBox.Clear();
+            phoneTextBox.Clear();
         }
     }
 }
