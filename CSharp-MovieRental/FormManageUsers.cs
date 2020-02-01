@@ -64,48 +64,6 @@ namespace CSharp_MovieRental
             resetForm();
         }
 
-        #region Navigation
-        private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            using (FormManageMovies formMovies = new FormManageMovies())
-            {
-                formMovies.ShowDialog();
-            }
-        }
-
-        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Current Page
-        }
-
-        private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            using (FormReturnMovies returnMovies = new FormReturnMovies())
-            {
-                returnMovies.ShowDialog();
-            }
-        }
-
-        private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
-            {
-                borrowMovies.ShowDialog();
-            }
-        }
-        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            using (FormReports reports = new FormReports())
-            {
-                reports.ShowDialog();
-            }
-        }
-        #endregion
-
         public void resetForm()
         {
             user = new User();
@@ -161,28 +119,32 @@ namespace CSharp_MovieRental
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             this.Validate(); // if any control has an event handler for the Validating event, it executes. 
+            
+            User user = new User();
+            user.FirstName = firstNameTextBox.Text;
+            user.LastName = lastNameTextBox.Text;
+            user.Email = emailTextBox.Text;
+            user.Phone = phoneTextBox.Text;
 
-            selectedUser.FirstName = firstNameTextBox.Text;
-            selectedUser.LastName = lastNameTextBox.Text;
-            selectedUser.Email = emailTextBox.Text;
-            selectedUser.Phone = phoneTextBox.Text;
-
-                if (!selectedUser.IsValid())
+            if (!user.IsValid())
+            {
+                List<string> errorList = user.Validate().ToList();
+                string errorMsg = "";
+                foreach (var error in errorList)
                 {
-                    this.context.Users.Remove(selectedUser);
-                    List<string> errorList = selectedUser.Validate().ToList();
-                    string errorMsg = "";
-                    foreach (var error in errorList)
-                    {
-                        errorMsg += ("\n" + error);
-                    }
-                    MessageBox.Show("Error Updating the Database\n" + errorMsg, "Invalid Submission");
-                } else
-                {
-                    context.Entry(selectedUser).State = EntityState.Modified;
-                    context.SaveChanges();
+                    errorMsg += ("\n" + error);
                 }
-
+                MessageBox.Show("Error Updating the Database\n" + errorMsg, "Invalid Submission");
+            } else
+            {
+                selectedUser.FirstName = firstNameTextBox.Text;
+                selectedUser.LastName = lastNameTextBox.Text;
+                selectedUser.Email = emailTextBox.Text;
+                selectedUser.Phone = phoneTextBox.Text;
+                context.Entry(selectedUser).State = EntityState.Modified;
+            }
+            
+            context.SaveChanges();
             resetForm();
         }
         
@@ -192,6 +154,50 @@ namespace CSharp_MovieRental
             this.context.Dispose();
             Application.Exit();
         }
+
+
+        #region Navigation
+        private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FormManageMovies formMovies = new FormManageMovies())
+            {
+                formMovies.ShowDialog();
+            }
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Current Page
+        }
+
+        private void returnMoviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FormReturnMovies returnMovies = new FormReturnMovies())
+            {
+                returnMovies.ShowDialog();
+            }
+        }
+
+        private void borrowMoviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FormBorrowMovies borrowMovies = new FormBorrowMovies())
+            {
+                borrowMovies.ShowDialog();
+            }
+        }
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FormReports reports = new FormReports())
+            {
+                reports.ShowDialog();
+            }
+        }
+        #endregion
+
     }
 }
 

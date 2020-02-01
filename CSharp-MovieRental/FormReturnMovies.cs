@@ -58,7 +58,7 @@ namespace CSharp_MovieRental
                 movieList.Add(context.Movies.Where(m => m.MovieId == bh.MovieId).FirstOrDefault());
             }
            
-            // Add movies to the form
+            // Remove Extra Columns
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
         }
@@ -87,7 +87,7 @@ namespace CSharp_MovieRental
             Application.Exit();
         }
 
-        // Navigation
+        #region Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -128,6 +128,7 @@ namespace CSharp_MovieRental
                 reports.ShowDialog();
             }
         }
+        #endregion
     }
 }
 

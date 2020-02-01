@@ -36,42 +36,18 @@ namespace CSharp_MovieRental
             {
                 yield return "Director's name is Mandatory.";
             }
-            if (this.Rating > 10)
+            if (this.Rating > 10 || this.Rating < 0)
             {
                 yield return "Rating must be between 0-10.";
             }
-            if (this.Rating <= 0)
-            {
-                yield return "Rating must be between 0-10.";
-            }
-            if (this.Year > 3000)
+            if (this.Year > 3000 || this.Year < 1800)
             {
                 yield return "Year is invalid.";
-            }
-            if (this.Year < 1800)
-            {
-                yield return "Year is less than 1800.";
             }
             if (string.IsNullOrEmpty(this.Synopsis))
             {
                 yield return "Synopsis is Mandatory.";
             }
-
-            /*
-            if (!int.TryParse(Year, out int rrYear))
-            {
-                yield return "Year is Invalid";
-            }
-            if (Rating.GetType() != typeof(decimal))
-            {
-                yield return "Rating is Invalid";
-            }
-            if (Duration.GetType() != typeof(int))
-            {
-                yield return "Duration is Invalid";
-            }
-            */
-
         }
     }
 }

@@ -69,6 +69,30 @@ namespace CSharp_MovieRental
             Application.Exit();
         }
 
+        // Adding Movie Poster
+        private void movieDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pbxMoviePoster.Visible = true;
+            try
+            {
+                pbxMoviePoster.Load(movieDataGridView.CurrentRow.Cells[7].Value.ToString());
+            } catch (Exception exp)
+            {
+                pbxMoviePoster.Visible = false;
+            }
+        }
+
+        private void movieBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            MessageBox.Show("Invalid Entry");
+        }
+
+        private void genreBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            MessageBox.Show("Invalid Entry");
+        }
+
+
         #region// Navigation
         private void manageMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -112,25 +136,5 @@ namespace CSharp_MovieRental
         }
         #endregion
 
-        private void movieDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                pbxMoviePoster.Load(movieDataGridView.CurrentRow.Cells[7].Value.ToString());
-            } catch (Exception exp)
-            {
-                // do nothing
-            }
-        }
-
-        private void movieBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
-        {
-            MessageBox.Show("Invalid Entry");
-        }
-
-        private void genreBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
-        {
-            MessageBox.Show("Invalid Entry");
-        }
     }
 }

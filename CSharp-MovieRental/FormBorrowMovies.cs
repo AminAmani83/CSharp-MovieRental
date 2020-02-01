@@ -107,12 +107,12 @@ namespace CSharp_MovieRental
             int movieId = (int)this.movieDataGridView.CurrentRow.Cells[0].Value;
 
             string connetionString = null;
-            SqlConnection cnn;
+            SqlConnection conn;
             SqlDataAdapter adapter = new SqlDataAdapter();
             string sql = null;
             connetionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=CSharp_MovieRental.MovieRentalContext;Integrated Security=True";
 
-            cnn = new SqlConnection(connetionString);
+            conn = new SqlConnection(connetionString);
 
             if (borrowingUser == null)
             {
@@ -121,11 +121,12 @@ namespace CSharp_MovieRental
             }
             else
             {
+                // We are using direct SQL queries in this form, and ORM in other forms, for educational purposes.
                 sql = "INSERT INTO BorrowHistories (BorrowDate, UserId, MovieId) VALUES (" + "'" + DateTime.Now + "'" + "," + borrowingUser.UserId + "," + movieId + ")";
                 try
                 {
-                    cnn.Open();
-                    adapter.InsertCommand = new SqlCommand(sql, cnn);
+                    conn.Open();
+                    adapter.InsertCommand = new SqlCommand(sql, conn);
                     adapter.InsertCommand.ExecuteNonQuery();
                     MessageBox.Show("Movie Borrowed Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtSearchMovie.Text = "";
