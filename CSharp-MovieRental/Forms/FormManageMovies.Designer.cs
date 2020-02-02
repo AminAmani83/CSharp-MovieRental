@@ -30,7 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.genreDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.movieDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.borrowMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,18 +55,8 @@
             this.gbxGenre = new System.Windows.Forms.GroupBox();
             this.gbxMoviePoster = new System.Windows.Forms.GroupBox();
             this.gbxMovies = new System.Windows.Forms.GroupBox();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.genreDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -63,7 +64,6 @@
             this.gbxGenre.SuspendLayout();
             this.gbxMoviePoster.SuspendLayout();
             this.gbxMovies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // genreDataGridView
@@ -80,6 +80,28 @@
             this.genreDataGridView.RowTemplate.Height = 24;
             this.genreDataGridView.Size = new System.Drawing.Size(391, 255);
             this.genreDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "GenreId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "GenreId";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // genreBindingSource
+            // 
+            this.genreBindingSource.DataSource = typeof(CSharp_MovieRental.Genre);
+            this.genreBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.genreBindingSource_DataError);
             // 
             // movieDataGridView
             // 
@@ -102,123 +124,6 @@
             this.movieDataGridView.Size = new System.Drawing.Size(1266, 282);
             this.movieDataGridView.TabIndex = 2;
             this.movieDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.movieDataGridView_CellClick);
-            // 
-            // movieBindingSource
-            // 
-            this.movieBindingSource.DataMember = "Movie";
-            this.movieBindingSource.DataSource = this.genreBindingSource;
-            this.movieBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.movieBindingSource_DataError);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.borrowMoviesToolStripMenuItem,
-            this.returnMoviesToolStripMenuItem,
-            this.manageUsersToolStripMenuItem,
-            this.manageMoviesToolStripMenuItem,
-            this.reportsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1387, 30);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // borrowMoviesToolStripMenuItem
-            // 
-            this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
-            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
-            this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
-            this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
-            // 
-            // returnMoviesToolStripMenuItem
-            // 
-            this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
-            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
-            this.returnMoviesToolStripMenuItem.Text = "Return Movies";
-            this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
-            // 
-            // manageUsersToolStripMenuItem
-            // 
-            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
-            this.manageUsersToolStripMenuItem.Text = "Manage Users";
-            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
-            // 
-            // manageMoviesToolStripMenuItem
-            // 
-            this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
-            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
-            this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
-            this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(582, 70);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(165, 25);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Manage Movies";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(1197, 338);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 31);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.genreBindingNavigatorSaveItem_Click);
-            // 
-            // pbxMoviePoster
-            // 
-            this.pbxMoviePoster.Location = new System.Drawing.Point(28, 33);
-            this.pbxMoviePoster.Name = "pbxMoviePoster";
-            this.pbxMoviePoster.Size = new System.Drawing.Size(293, 258);
-            this.pbxMoviePoster.TabIndex = 6;
-            this.pbxMoviePoster.TabStop = false;
-            // 
-            // gbxGenre
-            // 
-            this.gbxGenre.Controls.Add(this.genreDataGridView);
-            this.gbxGenre.Location = new System.Drawing.Point(32, 113);
-            this.gbxGenre.Name = "gbxGenre";
-            this.gbxGenre.Size = new System.Drawing.Size(457, 312);
-            this.gbxGenre.TabIndex = 7;
-            this.gbxGenre.TabStop = false;
-            this.gbxGenre.Text = "Genre";
-            // 
-            // gbxMoviePoster
-            // 
-            this.gbxMoviePoster.Controls.Add(this.pbxMoviePoster);
-            this.gbxMoviePoster.Location = new System.Drawing.Point(1008, 113);
-            this.gbxMoviePoster.Name = "gbxMoviePoster";
-            this.gbxMoviePoster.Size = new System.Drawing.Size(353, 312);
-            this.gbxMoviePoster.TabIndex = 8;
-            this.gbxMoviePoster.TabStop = false;
-            this.gbxMoviePoster.Text = "Movie Poster";
-            // 
-            // gbxMovies
-            // 
-            this.gbxMovies.Controls.Add(this.movieDataGridView);
-            this.gbxMovies.Controls.Add(this.btnSave);
-            this.gbxMovies.Location = new System.Drawing.Point(32, 444);
-            this.gbxMovies.Name = "gbxMovies";
-            this.gbxMovies.Size = new System.Drawing.Size(1339, 384);
-            this.gbxMovies.TabIndex = 9;
-            this.gbxMovies.TabStop = false;
-            this.gbxMovies.Text = "Movies";
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -285,27 +190,122 @@
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Width = 125;
             // 
-            // genreBindingSource
+            // movieBindingSource
             // 
-            this.genreBindingSource.DataSource = typeof(CSharp_MovieRental.Genre);
-            this.genreBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.genreBindingSource_DataError);
+            this.movieBindingSource.DataMember = "Movie";
+            this.movieBindingSource.DataSource = this.genreBindingSource;
+            this.movieBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.movieBindingSource_DataError);
             // 
-            // dataGridViewTextBoxColumn1
+            // menuStrip1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "GenreId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "GenreId";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.borrowMoviesToolStripMenuItem,
+            this.returnMoviesToolStripMenuItem,
+            this.manageUsersToolStripMenuItem,
+            this.manageMoviesToolStripMenuItem,
+            this.reportsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1387, 30);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // dataGridViewTextBoxColumn2
+            // borrowMoviesToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
+            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
+            this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
+            // 
+            // returnMoviesToolStripMenuItem
+            // 
+            this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
+            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.returnMoviesToolStripMenuItem.Text = "Return Movies";
+            this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
+            // 
+            // manageUsersToolStripMenuItem
+            // 
+            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
+            // 
+            // manageMoviesToolStripMenuItem
+            // 
+            this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
+            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
+            this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(0, 70);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(1387, 25);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Manage Movies";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1197, 338);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 31);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.genreBindingNavigatorSaveItem_Click);
+            // 
+            // pbxMoviePoster
+            // 
+            this.pbxMoviePoster.Location = new System.Drawing.Point(28, 33);
+            this.pbxMoviePoster.Name = "pbxMoviePoster";
+            this.pbxMoviePoster.Size = new System.Drawing.Size(293, 258);
+            this.pbxMoviePoster.TabIndex = 6;
+            this.pbxMoviePoster.TabStop = false;
+            // 
+            // gbxGenre
+            // 
+            this.gbxGenre.Controls.Add(this.genreDataGridView);
+            this.gbxGenre.Location = new System.Drawing.Point(24, 113);
+            this.gbxGenre.Name = "gbxGenre";
+            this.gbxGenre.Size = new System.Drawing.Size(457, 312);
+            this.gbxGenre.TabIndex = 7;
+            this.gbxGenre.TabStop = false;
+            this.gbxGenre.Text = "Genre";
+            // 
+            // gbxMoviePoster
+            // 
+            this.gbxMoviePoster.Controls.Add(this.pbxMoviePoster);
+            this.gbxMoviePoster.Location = new System.Drawing.Point(1010, 113);
+            this.gbxMoviePoster.Name = "gbxMoviePoster";
+            this.gbxMoviePoster.Size = new System.Drawing.Size(353, 312);
+            this.gbxMoviePoster.TabIndex = 8;
+            this.gbxMoviePoster.TabStop = false;
+            this.gbxMoviePoster.Text = "Movie Poster";
+            // 
+            // gbxMovies
+            // 
+            this.gbxMovies.Controls.Add(this.movieDataGridView);
+            this.gbxMovies.Controls.Add(this.btnSave);
+            this.gbxMovies.Location = new System.Drawing.Point(24, 444);
+            this.gbxMovies.Name = "gbxMovies";
+            this.gbxMovies.Size = new System.Drawing.Size(1339, 384);
+            this.gbxMovies.TabIndex = 9;
+            this.gbxMovies.TabStop = false;
+            this.gbxMovies.Text = "Movies";
             // 
             // FormManageMovies
             // 
@@ -322,6 +322,7 @@
             this.Text = "FormManageMovies";
             this.Click += new System.EventHandler(this.genreBindingNavigatorSaveItem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.genreDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -330,7 +331,6 @@
             this.gbxGenre.ResumeLayout(false);
             this.gbxMoviePoster.ResumeLayout(false);
             this.gbxMovies.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

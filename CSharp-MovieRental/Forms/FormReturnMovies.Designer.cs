@@ -82,7 +82,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(508, 547);
+            this.btnReturn.Location = new System.Drawing.Point(521, 547);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 26);
@@ -96,7 +96,7 @@
             this.grpUserInformation.Controls.Add(this.btnSearch);
             this.grpUserInformation.Controls.Add(this.lblUserEmail);
             this.grpUserInformation.Controls.Add(this.txtUserEmail);
-            this.grpUserInformation.Location = new System.Drawing.Point(260, 131);
+            this.grpUserInformation.Location = new System.Drawing.Point(253, 131);
             this.grpUserInformation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUserInformation.Name = "grpUserInformation";
             this.grpUserInformation.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -107,7 +107,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(499, 33);
+            this.btnSearch.Location = new System.Drawing.Point(510, 35);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 26);
@@ -119,7 +119,7 @@
             // lblUserEmail
             // 
             this.lblUserEmail.AutoSize = true;
-            this.lblUserEmail.Location = new System.Drawing.Point(7, 39);
+            this.lblUserEmail.Location = new System.Drawing.Point(18, 40);
             this.lblUserEmail.Name = "lblUserEmail";
             this.lblUserEmail.Size = new System.Drawing.Size(121, 17);
             this.lblUserEmail.TabIndex = 1;
@@ -127,7 +127,7 @@
             // 
             // txtUserEmail
             // 
-            this.txtUserEmail.Location = new System.Drawing.Point(152, 34);
+            this.txtUserEmail.Location = new System.Drawing.Point(171, 37);
             this.txtUserEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUserEmail.Name = "txtUserEmail";
             this.txtUserEmail.Size = new System.Drawing.Size(307, 22);
@@ -135,14 +135,13 @@
             // 
             // lblReturnMovies
             // 
-            this.lblReturnMovies.AutoSize = true;
             this.lblReturnMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturnMovies.Location = new System.Drawing.Point(450, 72);
+            this.lblReturnMovies.Location = new System.Drawing.Point(0, 72);
             this.lblReturnMovies.Name = "lblReturnMovies";
-            this.lblReturnMovies.Size = new System.Drawing.Size(180, 29);
+            this.lblReturnMovies.Size = new System.Drawing.Size(1116, 29);
             this.lblReturnMovies.TabIndex = 10;
             this.lblReturnMovies.Text = "Return Movies";
-            this.lblReturnMovies.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblReturnMovies.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // menuStrip1
             // 
@@ -156,42 +155,42 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1116, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1116, 30);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // borrowMoviesToolStripMenuItem
             // 
             this.borrowMoviesToolStripMenuItem.Name = "borrowMoviesToolStripMenuItem";
-            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.borrowMoviesToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
             this.borrowMoviesToolStripMenuItem.Text = "Borrow Movies";
             this.borrowMoviesToolStripMenuItem.Click += new System.EventHandler(this.borrowMoviesToolStripMenuItem_Click);
             // 
             // returnMoviesToolStripMenuItem
             // 
             this.returnMoviesToolStripMenuItem.Name = "returnMoviesToolStripMenuItem";
-            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.returnMoviesToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.returnMoviesToolStripMenuItem.Text = "Return Movies";
             this.returnMoviesToolStripMenuItem.Click += new System.EventHandler(this.returnMoviesToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageMoviesToolStripMenuItem
             // 
             this.manageMoviesToolStripMenuItem.Name = "manageMoviesToolStripMenuItem";
-            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.manageMoviesToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.manageMoviesToolStripMenuItem.Text = "Manage Movies";
             this.manageMoviesToolStripMenuItem.Click += new System.EventHandler(this.manageMoviesToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
             this.reportsToolStripMenuItem.Text = "Reports";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 

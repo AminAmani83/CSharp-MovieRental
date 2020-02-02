@@ -40,6 +40,7 @@ namespace CSharp_MovieRental
 
             // bingding the data to the control in form
             this.OverDueMoviesDataGridView.DataSource = bhList;
+            OverDueMoviesDataGridView.Columns[2].Visible = false;
             OverDueMoviesDataGridView.Columns[5].Visible = false;
             OverDueMoviesDataGridView.Columns[6].Visible = false;
         }
